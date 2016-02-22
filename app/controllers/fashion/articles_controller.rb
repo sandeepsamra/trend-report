@@ -1,9 +1,11 @@
+require 'open-uri'
+
 class Fashion::ArticlesController < ApplicationController
 
   def index
     #display all articles with category "fashion"
-    #@page = MetaInspector.new('http://www.whowhatwear.com/section/fashion-trends')
-    @hi = "hi"
+    @www = Nokogiri::HTML(open("http://www.whowhatwear.com/section/fashion-trends"))
+    @fspot = Nokogiri::HTML(open("http://www.thefashionspot.ca/tag/fashion-trend"))
   end
 
   def create
@@ -13,9 +15,13 @@ class Fashion::ArticlesController < ApplicationController
     #loop through each div, and create new Article object (attributes = elements in div)
     #background worker to scrape at regular intervals?
 
-    #using nokogiri
-    # @page.css('div class').each do |x|
-    #   Article.new(url: @page.css('div class selector')['href'])
+    #page = Nokogiri::HTML(open("http://www.whowhatwear.com/section/fashion-trends"))
+
+    # @page.css('article.promo.promo-feed.wow.promoIn').each do |article|
+    #   article.css('div.promo-feed-img img').attr('src')
+    #   article.css('div.promo-feed-headline a h3').text
+    #   url = "http://www.whowhatwear.com"
+    #   "#{url}#{article.css('div.promo-feed-headline a')[1].attr('href')}"
     # end
 
   end

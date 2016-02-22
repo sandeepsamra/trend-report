@@ -1,3 +1,20 @@
-<h1>Test</h1>
+<h1>Scraping Test</h1>
 
-<%= @hi %>
+<h2>WhoWhatWear</h2><br />
+
+<% @www.css('article.promo.promo-feed.wow.promoIn').each do |article| %>    
+  Image: <%= article.css('div.promo-feed-img img').attr('src') %><br />
+  Title: <%= article.css('div.promo-feed-headline a h3').text %><br/>
+  <% url = "http://www.whowhatwear.com" %>
+  Link: <%= "#{url}#{article.css('div.promo-feed-headline a')[1].attr('href')}" %>
+  <br /><br />
+<% end %>
+
+<h2>The Fashion Spot</h2><br />
+
+<% @fspot.css('article.article.clearfix.post-680117.post.type-post.status-publish.format-standard.has-post-thumbnail.hentry.category-style-trends').each do |article| %>    
+  Image: <%= article.css('a.category-article-thumb img').attr('src') %><br />
+  Title: <%= article.css('div.category-article-main div.article-crumbs.clearfix h2 a.post-title').text %><br/>
+  Link: <%= article.css('div.category-article-main div.article-crumbs.clearfix h2 a.post-title[href]') %><br />
+  <br /><br />
+<% end %>

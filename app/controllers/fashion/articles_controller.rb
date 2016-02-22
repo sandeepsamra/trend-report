@@ -2,7 +2,8 @@ class Fashion::ArticlesController < ApplicationController
 
   def index
     #display all articles with category "fashion"
-    @page = MetaInspector.new('http://www.whowhatwear.com/section/fashion-trends')
+    #@page = MetaInspector.new('http://www.whowhatwear.com/section/fashion-trends')
+    @hi = "hi"
   end
 
   def create

@@ -5,7 +5,8 @@ class Fashion::ArticlesController < ApplicationController
   def index
     #display all articles with category "fashion"
     @www = Nokogiri::HTML(open("http://www.whowhatwear.com/section/fashion-trends"))
-    @fspot = Nokogiri::HTML(open("http://www.thefashionspot.ca/tag/fashion-trend"))
+    @refinery = Nokogiri::HTML(open("http://www.refinery29.com/trends"))
+    @elle = Nokogiri::HTML(open("http://www.ellecanada.com/fashion/trends"))
   end
 
   def create

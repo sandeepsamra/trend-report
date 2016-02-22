@@ -1,6 +1,8 @@
+<!-- This is a test. All of this code will go in the controller, and will be used to save info into the database -->
+
 <h1>Scraping Test</h1>
 
-<h2>WhoWhatWear</h2><br />
+<h2>WhoWhatWear</h2>
 
 <% @www.css('article.promo.promo-feed.wow.promoIn').each do |article| %>    
   Image: <%= article.css('div.promo-feed-img img').attr('src') %><br />
@@ -10,11 +12,23 @@
   <br /><br />
 <% end %>
 
-<h2>The Fashion Spot</h2><br />
+<h2>Refinery 29</h2>
 
-<% @fspot.css('article.article.clearfix.post-680117.post.type-post.status-publish.format-standard.has-post-thumbnail.hentry.category-style-trends').each do |article| %>    
-  Image: <%= article.css('a.category-article-thumb img').attr('src') %><br />
-  Title: <%= article.css('div.category-article-main div.article-crumbs.clearfix h2 a.post-title').text %><br/>
-  Link: <%= article.css('div.category-article-main div.article-crumbs.clearfix h2 a.post-title[href]') %><br />
+<% @refinery.css('article.collection-story-container').each do |article| %>    
+  Image: <%= article.css('figure.collection-story-container-figure a.ga-trackable img').attr('src') %><br />
+  Title: <%= article.css('div.collection-story-details h2.collection-story-headline.ga-trackable a').text %><br/>
+  <% url = "http://www.refinery29.com" %>
+  Link: <%= "#{url}#{article.css('div.collection-story-details h2.collection-story-headline.ga-trackable a').attr('href')}" %>
   <br /><br />
 <% end %>
+
+<h2>Elle Canada</h2>
+
+<% sections = @elle.css('div#primary ul.subchannel-listing li.first.photo') && @elle.css('div#primary ul.subchannel-listing li.photo') %>
+<% sections.each do |article| %>
+  Image: <%= article.css('div.bloc div.thumb a img').attr('src') %><br />
+  Title: <%= article.css('div.bloc h3 a').text %><br/>
+  Link: <%= article.css('div.bloc h3 a').attr('href') %>
+  <br /><br />
+<% end %>
+

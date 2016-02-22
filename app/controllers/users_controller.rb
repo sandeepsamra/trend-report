@@ -15,7 +15,16 @@ class UsersController < ApplicationController
   #     render :new
   #   end
   # end
+  def edit #add an edit user view later
+    @user = User.find(params[:id])
+  end
 
+  def delete #admins will also be able to delete users
+    User.find(params[:id]).destroy
+    flash[:success] = "#{@user.username} has been deleted."
+    redirect_to users_path
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

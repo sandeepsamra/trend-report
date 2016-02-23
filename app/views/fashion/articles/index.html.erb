@@ -32,3 +32,22 @@
   <br /><br />
 <% end %>
 
+<h2>The Fashion Spot</h2>
+
+<% @fspot.css('article.article.clearfix').each do |article| %>    
+  Image: <%= article.css('a.category-article-thumb img').attr('src') %><br />
+  Title: <%= article.css('div.category-article-main header h2 a.post-title').text %><br/>
+    Link: <%= article.css('div.category-article-main header h2 a.post-title').attr('href') %>
+  <br /><br />
+<% end %>
+
+<h2>Glamour</h2>
+
+<% @glamour.css('div.g-search-item.g-article_v2').each do |article| %>    
+  <% url = "http://www.glamour.com" %>
+  Image: <%= "#{url}#{article.css('div.g-search-content div.g-search-media a img').attr('src')}" %><br />
+  Title: <%= article.css('div.g-search-content div.g-search-body a span').text %><br/>
+  Link: <%= "#{url}#{article.css('div.g-search-content div.g-search-body a.g-title').attr('href')}" %>
+  <br /><br />
+<% end %>
+

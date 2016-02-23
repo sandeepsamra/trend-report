@@ -33,7 +33,7 @@ group :doc do
 end
 
 #react-rails
-gem 'react-rails', '~> 1.6.0'
+gem 'react-rails', '~> 1.5.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,10 +1,10 @@
 namespace :scraper do
   desc "TODO"
   task perform_scrape: :environment do
-#code for the scraper goes here, can have a create method here too (does not have to be in the controller)
-#script should be in the OOP form, call the class in here. have another file where you create the classes and use inheritance
-#save each item into to db
-#this task is scheduled with the whenever gem
+# code for the scraper goes here, can have a create method here too (does not have to be in the controller)
+# script should be in the OOP form, call the class in here. have another file where you create the classes and use inheritance
+# save each item into to db
+# this task is scheduled with the whenever gem
 
 # refactor this code
 # <h1>Scraping Test</h1>
@@ -59,5 +59,4 @@ namespace :scraper do
 # <% end %>
 
 #   end
-
 end

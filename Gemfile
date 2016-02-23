@@ -37,8 +37,8 @@ end
 #react-rails
 gem 'react-rails', '~> 1.5.0'
 
-#scraper to run periodically
-gem 'delayed_job_active_record'
+#schedule the rake tasks
+gem 'whenever', :require => false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

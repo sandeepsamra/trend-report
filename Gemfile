@@ -34,6 +34,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#react-rails
+gem 'react-rails', '~> 1.5.0'
+
+#schedule the rake tasks
+gem 'whenever', :require => false
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -92,13 +92,12 @@ class FashionScraper
   def scrape_fashionbeans
     fashionbeans = Nokogiri::HTML(open("http://www.fashionbeans.com/category/mens-fashion-trends/"))
     fashionbeans.css('div.catArticles').each do |article|
-      url = "http://www.fashionbeans.com/category/mens-fashion-trends/"
       image = article.css('a.left.relative img').attr('src')
       title = article.css('h2 a').attr('title')
-      link = "#{url}#{article.css('h2 a').attr('href')}"
+      link = article.css('h2 a').attr('href')
 
       Article.create(
-        url: link,
+        url: link.value,
         image: image.value,
         title: title.value,
         category: "mfashion",
@@ -113,7 +112,7 @@ class FashionScraper
       image = article.css('picture img').attr('src')
       title = article.css('div.post-copy h2').text
       link = article.css('a')[0].attr('href')
-      
+
       Article.create(
         url: link,
         image: image.value,

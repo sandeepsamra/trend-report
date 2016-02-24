@@ -12,7 +12,9 @@ class FashionScraper
       Article.create(
         url: link,
         image: image.value,
-        title: title
+        title: title,
+        source: "Who What Wear",
+        category: "wfashion"
       )
     end
   end
@@ -27,7 +29,9 @@ class FashionScraper
       Article.create(
         url: link,
         image: image.value,
-        title: title
+        title: title,
+        source: "Refinery 29",
+        category: "wfashion"
       )
     end
   end
@@ -42,7 +46,9 @@ class FashionScraper
       Article.create(
         url: link.value,
         image: image.value,
-        title: title
+        title: title,
+        source: "Elle Canada",
+        category: "wfashion"
       )
     end
   end
@@ -56,7 +62,9 @@ class FashionScraper
       Article.create(
         url: link.value,
         image: image.value,
-        title: title
+        title: title,
+        source: "Fashion Spot",
+        category: "wfashion"
       )
     end
   end
@@ -71,7 +79,9 @@ class FashionScraper
       Article.create(
         url: link,
         image: image,
-        title: title
+        title: title,
+        source: "Glamour",
+        category: "wfashion"
       )
     end
   end

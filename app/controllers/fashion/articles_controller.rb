@@ -4,12 +4,14 @@ class Fashion::ArticlesController < ApplicationController
 
   def index
     #display all articles with category "fashion"
-    @articles = Article.all
+    #@articles = Article.all
     # @www = Nokogiri::HTML(open("http://www.whowhatwear.com/section/fashion-trends"))
     # @refinery = Nokogiri::HTML(open("http://www.refinery29.com/trends"))
     # @elle = Nokogiri::HTML(open("http://www.ellecanada.com/fashion/trends"))
     # @fspot = Nokogiri::HTML(open("http://www.thefashionspot.ca/tag/fashion-trend"))
     # @glamour = Nokogiri::HTML(open("http://www.glamour.com/fashion/outfit-ideas"))
+    # @fashionbeans = Nokogiri::HTML(open("http://www.fashionbeans.com/category/mens-fashion-trends/"))
+    # @sharp = Nokogiri::HTML(open("http://sharpmagazine.com/category/style/"))
   end
 
   def create

@@ -11,7 +11,7 @@ class FashionScraper
       link = "#{url}#{article.css('div.promo-feed-headline a')[1].attr('href')}"
       Article.create(
         url: link,
-        image: image,
+        image: image.value,
         title: title
       )
     end
@@ -26,7 +26,7 @@ class FashionScraper
       link = "#{url}#{article.css('div.collection-story-details h2.collection-story-headline.ga-trackable a').attr('href')}"
       Article.create(
         url: link,
-        image: image,
+        image: image.value,
         title: title
       )
     end
@@ -40,8 +40,8 @@ class FashionScraper
       title = article.css('div.bloc h3 a').text
       link = article.css('div.bloc h3 a').attr('href')
       Article.create(
-        url: link,
-        image: image,
+        url: link.value,
+        image: image.value,
         title: title
       )
     end
@@ -54,8 +54,8 @@ class FashionScraper
       title = article.css('div.category-article-main header h2 a.post-title').text
       link = article.css('div.category-article-main header h2 a.post-title').attr('href')
       Article.create(
-        url: link,
-        image: image,
+        url: link.value,
+        image: image.value,
         title: title
       )
     end

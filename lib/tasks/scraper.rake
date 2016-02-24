@@ -7,6 +7,8 @@ namespace :scraper do
   fs.scrape_elle
   fs.scrape_fashion_spot
   fs.scrape_glamour
+  fs.scrape_fashionbeans
+  fs.scrape_sharp
   #save each item into to db
   end
 end

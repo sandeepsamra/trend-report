@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'pry'
-
+#reque and reddis or sidkick
 class FashionScraper
 
   def scrape_www
@@ -78,15 +78,39 @@ class FashionScraper
     end
   end
   
-  #menswear
-  
-  #def scrape_
-  #end
+  #menswear category
+  def scrape_fashionbeans
+    fashionbeans = Nokogiri::HTML(open("http://www.fashionbeans.com/category/mens-fashion-trends/"))
+    fashionbeans.css('div.catArticles').each do |article|
+      url = "http://www.fashionbeans.com/category/mens-fashion-trends/"
+      image = article.css('a.left.relative img').attr('src')
+      title = article.css('h2 a').attr('title')
+      link = "#{url}#{article.css('h2').attr('href')}"
+      binding.pry
+      Article.create(
+        url: link,
+        image: image.value,
+        title: title.value,
+        category: "mfashion",
+        source: "fashionbeans"
+      )
+    end
+  end
 
-  #def scrape_
-  #end
-
-  #def scrape_
-  #end
+  def scrape_sharp
+    sharp = Nokogiri::HTML(open("http://sharpmagazine.com/category/style/"))
+    sharp.css('div.post.medium-post.whole-click').each do |article|
+      image = article.css('picture img').attr('src')
+      title = article.css('div.post-copy h2').text
+      link = article.css('a')[0].attr('href')
+      
+      Article.create(
+        url: link,
+        image: image.value,
+        title: title,
+        category: "mfashion",
+        source: "sharp_for_men"
+      )
+    end
+  end
 end
-

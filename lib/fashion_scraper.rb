@@ -34,8 +34,8 @@ class FashionScraper
   end
 
   def scrape_elle
-    @elle = Nokogiri::HTML(open("http://www.ellecanada.com/fashion/trends"))
-    sections = @elle.css('div#primary ul.subchannel-listing li.first.photo') && @elle.css('div#primary ul.subchannel-listing li.photo')
+    elle = Nokogiri::HTML(open("http://www.ellecanada.com/fashion/trends"))
+    sections = elle.css('div#primary ul.subchannel-listing li.first.photo') && elle.css('div#primary ul.subchannel-listing li.photo')
     sections.each do |article|
       image = article.css('div.bloc div.thumb a img').attr('src')
       title = article.css('div.bloc h3 a').text

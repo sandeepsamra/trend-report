@@ -118,7 +118,7 @@ class FashionScraper
         image: image.value,
         title: title,
         category: "mfashion",
-        source: "Sharp for Men"
+        source: "Sharp for Men" 
       )
     end
   end

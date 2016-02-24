@@ -77,6 +77,16 @@ class FashionScraper
       )
     end
   end
+  
+  #menswear
+  
+  #def scrape_
+  #end
 
+  #def scrape_
+  #end
+
+  #def scrape_
+  #end
 end
 

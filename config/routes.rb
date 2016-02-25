@@ -11,13 +11,13 @@ TrendReport::Application.routes.draw do
     namespace :men do
       resources :articles, only: [:index, :create]
     end
-    
+
   end
 
   resources :users, only: [:new, :create] do
     namespace :fashion do
       resources :articles, only: [:index]
-    end
+    end 
     resources :favourites, only: [:index, :create]
   end 
 

@@ -35,7 +35,7 @@ group :doc do
 end
 
 #react-rails
-gem 'react-rails', '~> 1.5.0'
+gem 'react-rails'
 
 #schedule the rake tasks
 gem 'whenever', :require => false

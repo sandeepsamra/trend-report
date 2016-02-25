@@ -1,23 +1,4 @@
-<!-- This is a test, all scraping actions will go in the rake task as a background job
-if there is a space you always put a dot
-are the urls absolute or relative 
-<h1>Menswear Scraping Test</h1>
-
-<h2>FashionBeans</h2>
-<% @fashionbeans.css('div.catArticles').each do |article| %>    
-  Image: <%= article.css('a.left.relative img').attr('src') %><br />
-  Title: <%= article.css('h2 a').attr('title') %><br/> 
-  Link: <%= article.css('h2 a')[0].attr('href') %>
-  <br /><br />
+Hi
+<% @article.each do |x| %>
+  <%= x.title %>
 <% end %>
-
-<h2>Sharp for Men</h2>
-<% @sharp.css('div.post.medium-post.whole-click').each do |article| %>    
-  Image: <%= article.css('picture img').attr('src') %><br />
-  Title: <%= article.css('div.post-copy h2').text %><br/>
-  Link: <%= article.css('a')[0].attr('href') %>
-  <br /><br />
-<% end %>
-
-<h2> Mens Fashion Post </h2>
--->

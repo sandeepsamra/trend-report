@@ -1,5 +1,11 @@
 <%= stylesheet_link_tag 'fashion-article' %>
 <%= render "nav_bar" %>
 <h1>Articles</h1>
+<!--<%= react_component('Article', text: 'hello') %> -->
 
-<%= react_component('Article', text: 'hello') %>
+<% @article.each do |article| %>
+<div class="article"> 
+<p><%= article.title %></p>
+<p> <a href="<%= article.url %>" target="blank"> <%= article.source %></a></p>
+</div>
+<% end %>

@@ -142,7 +142,7 @@ DEPENDENCIES
   pg
   pry
   rails (= 4.0.0)
-  react-rails (~> 1.5.0)
+  react-rails
   sass-rails (~> 4.0.0)
   sdoc
   turbolinks

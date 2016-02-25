@@ -3,7 +3,15 @@ TrendReport::Application.routes.draw do
   root to: 'welcome#index' 
 
   namespace :fashion do
-    resources :articles, only: [:index, :create]
+
+    namespace :women do
+      resources :articles, only: [:index, :create]
+    end
+
+    namespace :men do
+      resources :articles, only: [:index, :create]
+    end
+    
   end
 
   resources :users, only: [:new, :create] do

@@ -110,7 +110,7 @@ class FashionScraper
       image = article.css('picture img').attr('src')
       title = article.css('div.post-copy h2').text
       link = article.css('a')[0].attr('href')
-
+      
       Article.create(
         url: link,
         image: image.value,

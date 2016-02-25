@@ -17,7 +17,7 @@ TrendReport::Application.routes.draw do
   resources :users, only: [:new, :create] do
     namespace :fashion do
       resources :articles, only: [:index]
-    end 
+    end
     resources :favourites, only: [:index, :create]
   end 
 

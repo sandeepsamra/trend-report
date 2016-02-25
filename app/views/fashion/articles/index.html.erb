@@ -2,10 +2,10 @@
 <%= render "nav_bar" %>
 <h1>Articles</h1>
 <!--<%= react_component('Article', text: 'hello') %> -->
-
-<% @article.each do |article| %>
 <div class="article"> 
+<% @article.each do |article| %>
 <p><%= article.title %></p>
 <p> <a href="<%= article.url %>" target="blank"> <%= article.source %></a></p>
+<img src="<%=article.image%>"/>
 </div>
 <% end %>

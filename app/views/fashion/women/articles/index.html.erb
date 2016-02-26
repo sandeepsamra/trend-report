@@ -1,31 +1,4 @@
-<!-- nav bar starts here -->
-
-        <!-- creative menu -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="menu-wrap">
-        <nav class="menu">
-            <!-- Menu Links -->
-          <div class="icon-list">
-            <a id="nav-link-click" href="/"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
-            <a id="nav-link-click" href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
-            <ul class="hide-link">
-              <li class="hide-sublink"><a>Fashion</a></li>
-                <ul id="sub-hide-link" class="sub-hide-link">
-                  <li class="subsublink"><a href="<%= fashion_women_articles_path %>">Women</a></li>
-                  <li class="subsublink"><a href="<%= fashion_men_articles_path %>">Men</a></li>
-                </ul>
-              <li class="hide-sublink"><a href="#">Food</a></li>
-            </ul>
-            <a id="nav-link-click" href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Favourites</span></a>
-            <a id="nav-link-click" href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Log Out</span></a>
-          </div>
-        </nav>
-    </div>
-    <button class="menu-button" id="open-button"></button><!-- menu button -->
-  </div><!--/row-->
-</div><!--/container-->
-<!-- nav bar ends here -->
+<%= render "nav_bar" %>
 
 
 <section class="hero" id="hero">

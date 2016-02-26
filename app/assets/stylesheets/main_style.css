@@ -462,9 +462,12 @@ table {
 
 /*drop-down menu*/
 
+li.nav-link-li {
+	display: inline-block;
+}
+
 ul.nav-link-ul li.nav-link-li ul.hide-link {
 	display: none;
-	transition: all 1s ease-in;
 }
 
 ul.nav-link-ul li.nav-link-li:hover ul.hide-link {
@@ -479,8 +482,6 @@ li.hide-sublink ul.sub-hide-link {
 li.hide-sublink:hover ul.sub-hide-link {
 	display: block;
 }
-
-
 
 /* ==========================================================================Hero========================================================================== */
 .hero {

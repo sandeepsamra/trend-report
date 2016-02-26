@@ -12,6 +12,10 @@
     margin-bottom: 30px;
 }
 
+h1.page-header {
+  font-family: 'Open Sans',sans-serif;
+}
+
 /*footer {
     margin: 50px 0;
 }*/

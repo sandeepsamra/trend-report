@@ -15,14 +15,18 @@
         <nav class="menu">
             <!-- Menu Links -->
           <div class="icon-list">
-            <a id="nav-link-click" href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
-            <ul class="hide-link">
-              <li class="hide-sublink"><a>Fashion</a></li>
-                <ul id="sub-hide-link" class="sub-hide-link">
-                  <li class="subsublink"><a href="<%= fashion_women_articles_path %>">Women</a></li>
-                  <li class="subsublink"><a href="<%= fashion_men_articles_path %>">Men</a></li>
-                </ul>
-              <li class="hide-sublink"><a href="#">Food</a></li>
+            <ul class="nav-link-ul">
+              <li class="nav-link-li"><a href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
+              <ul class="hide-link">
+                <li class="hide-sublink"><a href="#">Food</a></li>
+                <li class="hide-sublink"><a>Fashion</a>
+                  <ul class="sub-hide-link" class="sub-hide-link">
+                    <li class="subsublink"><a href="<%= fashion_women_articles_path %>">Women</a></li>
+                    <li class="subsublink"><a href="<%= fashion_men_articles_path %>">Men</a></li>
+                  </ul>
+                  </li>
+              </ul>
+              </li>
             </ul>
           </div>
         </nav>

@@ -460,21 +460,27 @@ table {
 	transition-delay: 0.5s;
 }
 
-/*.hide-link {
+/*drop-down menu*/
+
+ul.nav-link-ul li.nav-link-li ul.hide-link {
 	display: none;
+	transition: all 1s ease-in;
 }
 
-.sub-hide-link {
-	display: none;
-}*/
-
-ul.hide-link {
-	display: none;
-}
-
-/*a#nav-link-click:hover ul#hide-link {
+ul.nav-link-ul li.nav-link-li:hover ul.hide-link {
 	display: block;
-}*/
+	position: fixed;
+}
+
+li.hide-sublink ul.sub-hide-link {
+	display: none;
+}
+
+li.hide-sublink:hover ul.sub-hide-link {
+	display: block;
+}
+
+
 
 /* ==========================================================================Hero========================================================================== */
 .hero {

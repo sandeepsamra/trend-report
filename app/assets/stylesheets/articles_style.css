@@ -8,6 +8,10 @@
     margin-bottom: 30px;
 }
 
-h1.page-header {
+h1.articles-page-header {
   font-family: 'Open Sans',sans-serif;
+}
+
+div#articles-page-content {
+  margin-top: 60px;
 }

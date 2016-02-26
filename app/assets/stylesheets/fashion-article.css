@@ -1,5 +1,24 @@
-body {
-margin-left: 10px;
-margin-right: 10px; 
-margin-top: 10px;
+.fashion {
+	margin-top: 150px;
+	margin-left: 10px;
+	margin-right: 10px; 
+}
+
+.article {
+	display: inline-block; 
+	vertical-align: top;
+	background-color: silver;
+	height: 200px;
+	width: 350px;
+}
+
+img {
+	width: auto;
+	max-width: 150px;
+	height: auto;
+	max-height: 150px;
+}
+
+h3 {
+	font-size: 15px;
 }

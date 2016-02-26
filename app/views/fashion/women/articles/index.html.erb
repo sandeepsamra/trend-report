@@ -1,14 +1,14 @@
-<<<<<<< HEAD
 <%= stylesheet_link_tag 'fashion-article' %>
 <%= render "nav_bar" %>
-<h1>Articles</h1>
-<!--<%= react_component('Article', text: 'hello') %> -->
-<div class="article"> 
-<% @article.each do |article| %>
-<p><%= article.title %></p>
-<p> <a href="<%= article.url %>" target="blank"> <%= article.source %></a></p>
-<img src="<%=article.image%>"/>
+<div class="fashion">
+	<h1>Women's Fashion Trends</h1> 
+		<% @article.each  do |article| %>
+		<div class="article">
+			<% if article.category == "wfashion" %>
+				<h3><%= article.title %></h3>
+				<h3> <a href="<%= article.url %>" target="blank"> <%= article.source %></a></h3>
+				<img src="<%=article.image%>"/>
+			<% end %>
+		<% end %>
+	</div>
 </div>
-<% end %>
-=======
->>>>>>> 64842033dff51ded57b5fdb7f34427efb8f16939

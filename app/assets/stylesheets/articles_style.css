@@ -15,3 +15,7 @@ h1.articles-page-header {
 div#articles-page-content {
   margin-top: 60px;
 }
+
+button {
+  outline: none;
+}

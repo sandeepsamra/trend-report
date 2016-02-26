@@ -2,20 +2,6 @@ $(window).load(function(){
 	$('#preloader').fadeOut('slow',function(){$(this).remove();});
 });
 
-
-/******************************************************************************************************************************
-Learn More Page Scroll
-*******************************************************************************************************************************/
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
-
 /******************************************************************************************************************************
 Menu
 *******************************************************************************************************************************/ 
@@ -60,7 +46,101 @@ $(document).ready(function() {
 
 	init();
 
+	//Dropdown menu
+
+	$('#nav-link-click').on('mouseover', function() {
+    $('ul#hide-link').removeClass('hide-link');
+  });
+
+   $('#nav-link-click').on('mouseout', function() {
+    $('ul#hide-link').addClass('hide-link');
+  });
+
+  $('li.sublink').on('mouseover', function() {
+    $('ul#sub-hide-link').removeClass('sub-hide-link');
+  });
+
+  $('li.sublink').on('mouseout', function() {
+    $('ul#sub-hide-link').addClass('sub-hide-link');
+  });
+
+});
+
+/******************************************************************************************************************************
+Waypoints
+*******************************************************************************************************************************/ 
+
+$(document).ready(function() {
+
+	$('.wp1').waypoint(function() {
+		$('.wp1').addClass('animated fadeInLeft');
+	}, {
+		offset: '75%'
+	});
+	$('.wp2').waypoint(function() {
+		$('.wp2').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp3').waypoint(function() {
+		$('.wp3').addClass('animated fadeInDown');
+	}, {
+		offset: '55%'
+	});
+	$('.wp4').waypoint(function() {
+		$('.wp4').addClass('animated fadeInDown');
+	}, {
+		offset: '75%'
+	});
+	$('.wp5').waypoint(function() {
+		$('.wp5').addClass('animated fadeInUp');
+	}, {
+		offset: '75%'
+	});
+	$('.wp6').waypoint(function() {
+		$('.wp6').addClass('animated fadeInDown');
+	}, {
+		offset: '75%'
+	});
+
+});
+
+/******************************************************************************************************************************
+Nav Button
+*******************************************************************************************************************************/ 
+
+$(window).load(function() {
+
+	$('.nav_slide_button').click(function() {
+		$('.pull').slideToggle();
+	});
+
 });
 
 
+$(function() {
+
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				$('html,body').animate({
+					scrollTop: target.offset().top - 125
+				}, 1000);
+				return false;
+			}
+		}
+	});
+
+});
+
+/******************************************************************************************************************************
+Nav Transform
+*******************************************************************************************************************************/ 
+
+document.querySelector("#nav-toggle").addEventListener("click", function() {
+	this.classList.toggle("active");
+});
 

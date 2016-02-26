@@ -1,5 +1,3 @@
-<!-- <%= stylesheet_link_tag 'welcome-index' %>
-
     <body id="top">
 
       <!-- ****************************** Preloader ************************** -->
@@ -17,7 +15,15 @@
         <nav class="menu">
             <!-- Menu Links -->
           <div class="icon-list">
-            <a href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
+            <a id="nav-link-click" href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
+            <ul class="hide-link">
+              <li class="hide-sublink"><a>Fashion</a></li>
+                <ul id="sub-hide-link" class="sub-hide-link">
+                  <li class="subsublink"><a href="<%= fashion_women_articles_path %>">Women</a></li>
+                  <li class="subsublink"><a href="<%= fashion_men_articles_path %>">Men</a></li>
+                </ul>
+              <li class="hide-sublink"><a href="#">Food</a></li>
+            </ul>
           </div>
         </nav>
           </div>
@@ -27,12 +33,7 @@
       <!-- Header Image -->
           <section class="hero" id="hero">
             <div class="container">
-        <!-- Slider Button (don't edit!)-->
-              <div class="row">
-                <div class="col-md-12 text-right navicon">
-                  <a id="nav-toggle" class="nav_slide_button" href="index.html#"><span></span></a>
-                </div>
-              </div>
+
         <!-- HEADER HEADLINE -->
               <div class="row">
                 <div class="col-md-8 col-md-offset-1 inner">
@@ -51,6 +52,7 @@
         HEADER SECTION END  
         =========================== -->
     
+
     <!-- ==========================
         FOOTER SECTION
         =========================== -->
@@ -58,7 +60,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 text-center">
-                <p>Layout by <a href="http://www.themewagon.com">ThemeWagon</a>
+                <p>Layout by <a href="http://www.themewagon.com" target="blank">ThemeWagon</a>
               </div>
             </div>
           </div>

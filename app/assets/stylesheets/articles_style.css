@@ -4,10 +4,6 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-/*body {*/
-    /*padding-top: 70px;*/ /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
-/*}*/
-
 .thumb {
     margin-bottom: 30px;
 }
@@ -15,7 +11,3 @@
 h1.page-header {
   font-family: 'Open Sans',sans-serif;
 }
-
-/*footer {
-    margin: 50px 0;
-}*/

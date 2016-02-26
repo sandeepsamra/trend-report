@@ -1,14 +1,25 @@
 <%= stylesheet_link_tag 'fashion-article' %>
 <%= render "nav_bar" %>
-<div class="fashion">
-	<h1>Men's Fashion Trends</h1>
-		<% @article.each  do |article| %>
-		<div class="article"> 
-			<% if article.category == "mfashion" %>
-				<h3><%= article.title %></h3>
-				<h3> <a href="<%= article.url %>" target="blank"> <%= article.source %></a></h3>
-				<img src="<%=article.image%>"/>
-			<% end %>
-		<% end %>
-	</div>
-<div>
+<div class="trend">
+<h1>Men's Fashion Trends</h1>
+<div id="fh5co-main">
+	<div class="container">
+		<div class="row">
+      <div id="fh5co-board" data-columns="4">
+      	<div class="column size-lof4">
+      	<div class="item">
+      	<% @article.each  do |article| %>
+      	<% if article.category == "mfashion" %>
+        		<div class="animate-box">
+	        		<a href="<%= article.url %>" target="blank"> <%= article.source %> <img src="<%=article.image%>"/></a>
+        		</div>
+        	<div class="fh5co-desc"><%= article.title %></div>
+        	<% end %>
+					<% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

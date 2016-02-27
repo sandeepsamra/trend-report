@@ -4,9 +4,18 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-.thumb {
-  margin-bottom: 30px;
+.thumb-women {
+  margin-bottom: 40px;
+  margin-top: 40px;
   display: inline-block;
+  height:430px;
+}
+
+.thumb-men {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  display: inline-block;
+  height:300px;
 }
 
 h1.articles-page-header {

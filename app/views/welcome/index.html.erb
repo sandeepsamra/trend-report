@@ -48,32 +48,67 @@
           <h3 class="animated fadeInUp delay-05s"><span class="rotate">Keep up with your favourite trends</span></h3><!-- Text Rotator -->
         </div>
 <!-- Sign Up Form -->
-<div class="col-md-5 contact">
+<div class="col-md-5 contact" id="sign-up-form">
   <h4>SIGN UP & SAVE YOUR FAVS</h4>
-  <form role="form">
+  <%= form_for @user do |f| %>
+
     <div class="form-group">
-      <label for="fname">First Name:</label>
-      <input type="fname" class="form-control" id="fname">
+        <%= f.text_field :fname, class: "form-control", placeholder: "First Name" %>
     </div>
     <div class="form-group">
-      <label for="lname">Last Name:</label>
-      <input type="lname" class="form-control" id="lname">
+        <%= f.text_field :lname, class: "form-control", placeholder: "Last Name" %>
     </div>
     <div class="form-group">
-      <label for="email">Email address:</label>
-      <input type="email" class="form-control" id="email">
+        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
     </div>
-    <label><a href="#"><h4>Log in to your account</h4></a></label>
-    <button type="submit" class="btn btn-send">
-        Sign Up
-    </button>
-  </form>
+    <label><a href="#" id="log-in-click"><h4>Click here to log in</h4></a></label>
+    <%= f.submit "Sign Up", class: "btn btn-send" %>
+
+    <% if @user.errors.any? %>
+      <div>
+        We couln't create an account for you because:
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <% end %>
   <!-- put message here re successful sign up -->
 </div>
+
+<div class="col-md-5 contact hide-form" id="sign-in-form">
+  <h4>LOG IN TO SEE YOUR TRENDS</h4>
+  <%= form_for @user do |f| %>
+
+    <div class="form-group">
+        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+    </div>
+    <div class="form-group">
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+    </div>
+    <label><a href="#" id="sign-up-click"><h4>Click here to sign up</h4></a></label>
+    <%= f.submit "Log In", class: "btn btn-send" %>
+
+    <% if @user.errors.any? %>
+      <div>
+        We couln't create an account for you because:
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <% end %>
+</div>
+
 <!-- sign up form end -->
       </div>
     </div>
@@ -92,7 +127,7 @@ FOOTER SECTION
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <p>Layout by <a href="http://www.themewagon.com" target="blank">ThemeWagon</a>
+        <p>Theme by <a href="http://www.themewagon.com" target="blank">ThemeWagon</a>
       </div>
     </div>
   </div>

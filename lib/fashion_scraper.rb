@@ -73,7 +73,7 @@ class FashionScraper
     glamour = Nokogiri::HTML(open("http://www.glamour.com/fashion/outfit-ideas"))
     glamour.css('div.g-search-item.g-article_v2').each do |article|
       url = "http://www.glamour.com"
-      image = "#{url}#{article.css('div.g-search-content div.g-search-media a img').attr('src')}"
+      image = "#{url}#{article.css('div.g-search-content div.g-search-media a img').attr('data-src')}"
       title = article.css('div.g-search-content div.g-search-body a span').text
       link = "#{url}#{article.css('div.g-search-content div.g-search-body a.g-title').attr('href')}"
       Article.create(

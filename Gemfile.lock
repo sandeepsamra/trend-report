@@ -32,6 +32,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bcrypt-ruby (3.0.1)
     builder (3.1.4)
     chronic (0.10.2)
     coderay (1.1.0)
@@ -135,6 +136,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails

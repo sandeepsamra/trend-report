@@ -1,7 +1,7 @@
 class Fashion::Women::ArticlesController < ApplicationController
 
   def index
-    #@article = Article.where(id: 747)
+    @article = Article.all
     #render json: @article, root: false
   end
 

@@ -1,74 +1,102 @@
-    <body id="top">
+<body id="top">
 
-      <!-- ****************************** Preloader ************************** -->
-      <div id="preloader"></div>
+<!-- ****************************** Preloader ************************** -->
+<div id="preloader"></div>
 
 
-      <!-- ==========================
-        HEADER SECTION 
-        =========================== -->
-        <header id="home">
-        <!-- creative menu -->
-            <div class="container-fluid">
-              <div class="row">
-                <div class="menu-wrap">
-        <nav class="menu">
-            <!-- Menu Links -->
-          <div class="icon-list">
-            <ul class="nav-link-ul">
-              <li class="nav-link-li"><a href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
-              <ul class="hide-link">
-                <li class="hide-sublink"><a href="#">Food</a></li>
-                <li class="hide-sublink"><a>Fashion</a>
-                  <ul class="sub-hide-link" class="sub-hide-link">
-                    <li class="subsublink"><a href="<%= fashion_women_articles_path %>">Women</a></li>
-                    <li class="subsublink"><a href="<%= fashion_men_articles_path %>">Men</a></li>
-                  </ul>
-                  </li>
-              </ul>
-              </li>
+<!-- ==========================
+  HEADER SECTION 
+  =========================== -->
+  <header id="home">
+  <!-- creative menu -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="menu-wrap">
+  <nav class="menu">
+      <!-- Menu Links -->
+    <div class="icon-list">
+      <ul class="nav-link-ul">
+        <li class="nav-link-li"><a href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
+        <ul class="hide-link">
+          <li class="hide-sublink"><a href="#">Food</a></li>
+          <li class="hide-sublink"><a>Fashion</a>
+            <ul class="sub-hide-link" class="sub-hide-link">
+              <li class="subsublink"><a href="<%= fashion_women_articles_path %>">Women</a></li>
+              <li class="subsublink"><a href="<%= fashion_men_articles_path %>">Men</a></li>
             </ul>
-          </div>
-        </nav>
-          </div>
-          <button class="menu-button" id="open-button"></button><!-- menu button -->
-              </div><!--/row-->
-            </div><!--/container-->
-      <!-- Header Image -->
-          <section class="hero" id="hero">
-            <div class="container">
+            </li>
+        </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    </div>
+    <button class="menu-button" id="open-button"></button><!-- menu button -->
+        </div><!--/row-->
+      </div><!--/container-->
+<!-- Header Image -->
+    <section class="hero" id="hero">
+      <div class="container">
 
-        <!-- HEADER HEADLINE -->
-              <div class="row">
-                <div class="col-md-8 col-md-offset-1 inner">
-                  <h1 class="animated fadeInDown">
-                    T<span style="color:#E04343;">r</span>en<span style="color:#E04343;">d</span><br/>
-                    <span>R<span style="color:#FFE800">e</span>p</span><span style="color:#FFE800">o</span>r<span style="color:#FFE800">t</span>
-                  </h1><!-- Title -->
-                  <h3 class="animated fadeInUp delay-05s"><span class="rotate">Keep up with your favourite trends</span></h3><!-- Text Rotator -->
-                </div>
-              </div>
-            </div>
-          </section>
-      <!-- Header Image End -->
-        </header>
-    <!-- ==========================
-        HEADER SECTION END  
-        =========================== -->
-    
+<!-- HEADER HEADLINE -->
+      <div class="row" id="main-section">
+        <div class="col-md-7">
+          <h1 class="animated fadeInDown">
+            T<span style="color:#E04343;">r</span>en<span style="color:#E04343;">d</span><br/>
+            <span>R<span style="color:#FFE800">e</span>p</span><span style="color:#FFE800">o</span>r<span style="color:#FFE800">t</span>
+          </h1><!-- Title -->
+          <h3 class="animated fadeInUp delay-05s"><span class="rotate">Keep up with your favourite trends</span></h3><!-- Text Rotator -->
+        </div>
+<!-- Sign Up Form -->
+<div class="col-md-5 contact">
+  <h4>SIGN UP & SAVE YOUR FAVS</h4>
+  <form role="form">
+    <div class="form-group">
+      <label for="fname">First Name:</label>
+      <input type="fname" class="form-control" id="fname">
+    </div>
+    <div class="form-group">
+      <label for="lname">Last Name:</label>
+      <input type="lname" class="form-control" id="lname">
+    </div>
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd">
+    </div>
+    <label><a href="a"><h4>Log in to your account</h4></a></label>
+    <button type="submit" class="btn btn-send">
+        Sign Up
+    </button>
+  </form>
+  <!-- put message here re successful sign up -->
+</div>
+<!-- sign up form end -->
+      </div>
+    </div>
+  </section>
+<!-- Header Image End -->
+</header>
+<!-- ==========================
+HEADER SECTION END  
+=========================== -->
 
-    <!-- ==========================
-        FOOTER SECTION
-        =========================== -->
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <p>Layout by <a href="http://www.themewagon.com" target="blank">ThemeWagon</a>
-              </div>
-            </div>
-          </div>
-        </footer>
-    <!-- ==========================
-        FOOTER SECTION END
-        =========================== -->   
+
+<!-- ==========================
+FOOTER SECTION
+=========================== -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>Layout by <a href="http://www.themewagon.com" target="blank">ThemeWagon</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ==========================
+FOOTER SECTION END
+=========================== -->   

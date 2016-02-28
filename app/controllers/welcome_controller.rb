@@ -4,23 +4,23 @@ class WelcomeController < ApplicationController
     @user = User.new
   end
 
-  def create
-    # @user = User.new(user_params)
+  # def create
+  #   @user = User.new(user_params)
 
-    # if @user.save
-    #   redirect_to user_favourites_path
-    #   # session[:user_id] = @user.id
-    #   # redirect_to movies_path, notice: "Welcome aboard, #{@user.firstname}!"
-    # else
-    #   redirect_to root_path
-    # end
+  #   if @user.save
+  #     redirect_to user_favourites_path
+  #     # session[:user_id] = @user.id
+  #     # redirect_to movies_path, notice: "Welcome aboard, #{@user.firstname}!"
+  #   else
+  #     redirect_to root_path
+  #   end
 
-  end
+  # end
 
-  protected
+  # protected
 
-  def user_params
-    params.require(:user).permit(:fname, :lname, :email, :password)
-  end
+  # def user_params
+  #   params.require(:user).permit(:fname, :lname, :email, :password, :password_confirmation)
+  # end
 
 end

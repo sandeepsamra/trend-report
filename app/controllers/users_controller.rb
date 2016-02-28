@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:user_id] = @user.id
       redirect_to user_favourites_path
-      # session[:user_id] = @user.id
       # redirect_to movies_path, notice: "Welcome aboard, #{@user.firstname}!"
     else
       redirect_to root_path
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:fname, :lname, :email, :password)
+    params.require(:user).permit(:fname, :lname, :email, :password, :password_confirmation)
   end
 
 end

@@ -39,17 +39,18 @@
       <div class="container">
 
 <!-- HEADER HEADLINE -->
-      <div class="row" id="main-section">
-        <div class="col-md-7">
-          <h1 class="animated fadeInDown">
-            T<span style="color:#E04343;">r</span>en<span style="color:#E04343;">d</span><br/>
-            <span>R<span style="color:#FFE800">e</span>p</span><span style="color:#FFE800">o</span>r<span style="color:#FFE800">t</span>
-          </h1><!-- Title -->
-          <h3 class="animated fadeInUp delay-05s"><span class="rotate">Keep up with your favourite trends</span></h3><!-- Text Rotator -->
-        </div>
-<!-- Sign Up Form -->
+<div class="row" id="main-section">
+  <div class="col-md-7">
+    <h1 class="animated fadeInDown">
+      T<span style="color:#E04343;">r</span>en<span style="color:#E04343;">d</span><br/>
+      <span>R<span style="color:#FFE800">e</span>p</span><span style="color:#FFE800">o</span>r<span style="color:#FFE800">t</span>
+    </h1><!-- Title -->
+    <h3 class="animated fadeInUp delay-05s"><span class="rotate">Keep up with your favourite trends</span></h3><!-- Text Rotator -->
+  </div>
+
+<!-- SIGN UP FORM SECTION -->
 <div class="col-md-5 contact" id="sign-up-form">
-  <h4>SIGN UP & SAVE YOUR FAVS</h4>
+  <h4>SIGN UP & SAVE YOUR FAVES</h4>
   <%= form_for @user do |f| %>
 
     <div class="form-group">
@@ -63,6 +64,9 @@
     </div>
     <div class="form-group">
         <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+    </div>
+    <div class="form-group">
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
     </div>
     <label><a href="#" id="log-in-click"><h4>Click here to log in</h4></a></label>
     <%= f.submit "Sign Up", class: "btn btn-send" %>
@@ -82,34 +86,27 @@
   <!-- put message here re successful sign up -->
 </div>
 
+<!-- SIGN UP FORM END -->
+
+<!-- SIGN IN FORM SECTION -->
+
 <div class="col-md-5 contact hide-form" id="sign-in-form">
   <h4>LOG IN TO SEE YOUR TRENDS</h4>
-  <%= form_for @user do |f| %>
 
-    <div class="form-group">
-        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
-    </div>
-    <div class="form-group">
-        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-    </div>
-    <label><a href="#" id="sign-up-click"><h4>Click here to sign up</h4></a></label>
-    <%= f.submit "Log In", class: "btn btn-send" %> 
-
-    <% if @user.errors.any? %>
-      <div>
-        We couln't create an account for you because:
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <div class="form-group">
+        <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
       </div>
+      <div class="form-group">
+        <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+      </div>
+      <label><a href="#" id="sign-up-click"><h4>Click here to sign up</h4></a></label>
+      <%= f.submit "Log in", class: "btn btn-send" %>
     <% end %>
-
-  <% end %>
 </div>
 
-<!-- sign up form end -->
+<!-- SIGN IN FORM END -->
+
       </div>
     </div>
   </section>

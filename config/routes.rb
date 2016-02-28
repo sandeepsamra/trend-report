@@ -2,6 +2,8 @@ TrendReport::Application.routes.draw do
   
   root to: 'welcome#index'
 
+  resources :welcome, only: [:index, :create]
+
   namespace :fashion do
     namespace :women do
       resources :articles, only: [:index]
@@ -20,8 +22,10 @@ TrendReport::Application.routes.draw do
         resources :articles, only: [:index]
       end
     end
-    resources :favourites, only: [:index, :create]
-  end 
+    resources :favourites, only: [:index, :create, :destroy]
+  end
+
+  resource :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

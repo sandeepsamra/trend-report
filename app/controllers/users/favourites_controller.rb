@@ -1,6 +1,7 @@
 class FavouritesController < ApplicationController
 
   def index
+    @favourites = Favourites.all
     #user_id = current user.id
     #if favourites.user_id == current user_id
     #favourite.each do |i|

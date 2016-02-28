@@ -4,16 +4,13 @@ class FavouritesController < ApplicationController
 
   def index
     #@favourites = Favourites.all
-    #user_id = current user.id
-    #if favourites.user_id == current user_id
-    #favourite.each do |i|
-    #show title, image, author, link
+    @user = current_user
   end
 
   def create
     #user_id = id of current user
     #when user clicks save button under article
-    #favourite.user_id = current user.id
+    #favourite.user_id = current_user.id
     #favourite.save
   end
 

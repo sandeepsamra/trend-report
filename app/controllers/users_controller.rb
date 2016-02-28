@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if user.save
       session[:user_id] = user.id
-      redirect_to user_favourites_path(user.id) #, notice: "Welcome aboard, #{@user.fname}!"
+      redirect_to user_favourites_path(user.id)
     else
       redirect_to root_path
     end

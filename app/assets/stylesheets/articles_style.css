@@ -1,0 +1,31 @@
+/*!
+ * Start Bootstrap - Thumbnail Gallery HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+.thumb-women {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  display: inline-block;
+  height:430px;
+}
+
+.thumb-men {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  display: inline-block;
+  height:300px;
+}
+
+h1.articles-page-header {
+  font-family: 'Open Sans',sans-serif;
+}
+
+div#articles-page-content {
+  margin-top: 60px;
+}
+
+button {
+  outline: none;
+}

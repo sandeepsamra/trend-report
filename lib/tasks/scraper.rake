@@ -9,5 +9,6 @@ namespace :scraper do
   fs.scrape_glamour
   fs.scrape_fashionbeans
   fs.scrape_sharp
+  fs.scrape_details
   end
 end

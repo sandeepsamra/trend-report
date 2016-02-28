@@ -1,25 +1,32 @@
-<%= stylesheet_link_tag 'fashion-article' %>
 <%= render "nav_bar" %>
-<div class="trend">
-<h1>Men's Fashion Trends</h1>
-<div id="fh5co-main">
-	<div class="container">
-		<div class="row">
-      <div id="fh5co-board" data-columns="4">
-      	<div class="column size-lof4">
-      	<div class="item">
-      	<% @article.each  do |article| %>
-      	<% if article.category == "mfashion" %>
-        		<div class="animate-box">
-	        		<a href="<%= article.url %>" target="blank"> <%= article.source %> <img src="<%=article.image%>"/></a>
-        		</div>
-        	<div class="fh5co-desc"><%= article.title %></div>
-        	<% end %>
-					<% end %>
+
+
+<section class="hero" id="hero">
+<div class="container">
+
+    <div class="row" id="articles-page-content">
+
+        <div class="col-lg-12">
+            <h1 class="animated fadeInDown" align="center">Men's Fashion</h1>
+            <br /><br /><br />
         </div>
-      </div>
+
+        <% @article.each do |article| %>
+            <% if article.category == "mfashion" %>
+                <!--<div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
+                <div class="col-xs-3 thumb-men">
+                    <a class="thumbnail" href="<%= article.url %>" target="blank">
+                        <img class="img-responsive" src="<%= article.image %>" alt="">
+                    </a>
+                    <h4 style="color:black"><%= article.title %></h4>
+                    <h4>Source: <%= article.source %></h4>
+                </div>
+            <% end %>
+        <% end %>
+
     </div>
-  </div>
+
+    <hr>
+
 </div>
-</div>
-</div>
+</section>

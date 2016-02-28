@@ -1,5 +1,7 @@
 class FavouritesController < ApplicationController
 
+  before_filter :restrict_access
+
   def index
     #@favourites = Favourites.all
     #user_id = current user.id

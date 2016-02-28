@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
+    @user = User.find_by(email: params[:email])
 
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to user_favourites_path, notice: "Welcome back, #{user.firstname}!"
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to user_favourites_path(@user.id), notice: "Welcome back, #{@user.fname}!"
     else
       flash.now[:alert] = "Log in failed..."
-      render :new
+      redirect_to root_path
     end
   end
 

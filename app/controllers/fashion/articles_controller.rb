@@ -2,7 +2,7 @@ class Fashion::ArticlesController < ApplicationController
 
   def index
     if params[:query]
-      @article = Article.search(params[:query]).order("created_at DESC")
+      @article = Article.search(params[:query])
     else
       @article = Article.all
     end

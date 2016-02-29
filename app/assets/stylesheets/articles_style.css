@@ -12,8 +12,8 @@ h1.articles-page-header {
   font-family: 'Open Sans',sans-serif;
 }
 
-div #articles-page-content {
-  margin-top: 60px;
+div#articles-page-content {
+  margin-top: 20px;
 }
 
 button {

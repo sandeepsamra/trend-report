@@ -2,8 +2,6 @@ TrendReport::Application.routes.draw do
   
   root to: 'welcome#index'
 
-  resources :welcome, only: [:index, :create]
-
   namespace :fashion do
     namespace :women do
       resources :articles, only: [:index]
@@ -11,6 +9,10 @@ TrendReport::Application.routes.draw do
     namespace :men do
       resources :articles, only: [:index]
     end
+  end
+
+  namespace :food do
+    resources :articles, only: [:index]
   end
 
   resources :users, only: [:create] do
@@ -21,6 +23,9 @@ TrendReport::Application.routes.draw do
       namespace :men do
         resources :articles, only: [:index]
       end
+    end
+    namespace :food do
+      resources :articles, only: [:index]
     end
     resources :favourites, only: [:index, :create, :destroy]
   end

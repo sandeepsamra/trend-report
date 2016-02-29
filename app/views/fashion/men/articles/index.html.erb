@@ -1,5 +1,6 @@
 <%= render "nav_bar" %>
 
+<body id="top">
 
 <section class="hero" id="hero">
 <div class="container">
@@ -21,6 +22,7 @@
                     <h4 style="color:black"><%= article.title %></h4>
                     <h4>Source: <%= article.source %></h4>
                 </div>
+                <!-- if user is logged in, display button to save to favourites -->
             <% end %>
         <% end %>
 
@@ -31,4 +33,4 @@
 </div>
 </section>
 
-    <!-- /.container -->
+</body>

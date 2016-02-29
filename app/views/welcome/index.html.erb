@@ -48,39 +48,30 @@
     <h3 class="animated fadeInUp delay-05s"><span class="rotate">Keep up with your favourite trends</span></h3><!-- Text Rotator -->
   </div>
 
-<!-- SIGN UP FORM SECTION -->
+<!-- SIGN UP FORM SECTION (invisible when sign in form is visible) -->
 <div class="col-md-5 contact" id="sign-up-form">
   <h4>SIGN UP & SAVE YOUR FAVES</h4>
   <%= form_for @user do |f| %>
 
-    <div class="form-group">
-        <%= f.text_field :fname, class: "form-control", placeholder: "First Name" %>
+    <div class="form-group" id="form-group-fname">
+        <%= f.text_field :fname, id: "form-fname", class: "form-control", placeholder: "First Name" %>
     </div>
-    <div class="form-group">
-        <%= f.text_field :lname, class: "form-control", placeholder: "Last Name" %>
+    <div class="form-group" id="form-group-lname">
+        <%= f.text_field :lname, id: "form-lname", class: "form-control", placeholder: "Last Name" %>
     </div>
-    <div class="form-group">
-        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+    <div class="form-group" id="form-group-email">
+        <%= f.text_field :email, id: "form-email", class: "form-control", placeholder: "Email" %>
     </div>
-    <div class="form-group">
-        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+    <div class="form-group" id="form-group-password">
+        <%= f.password_field :password, id: "form-password", class: "form-control", placeholder: "Password" %>
     </div>
-    <div class="form-group">
-        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+    <div class="form-group" id="form-group-pconfirm">
+        <%= f.password_field :password_confirmation, id: "form-pconfirm", class: "form-control", placeholder: "Confirm Password" %>
     </div>
-    <label><a href="#" id="log-in-click"><h4>Click here to log in</h4></a></label>
+    <label><a href="#" id="log-in-click"><h4>Log in to your account</h4></a></label>
     <%= f.submit "Sign Up", class: "btn btn-send" %>
 
-    <% if @user.errors.any? %>
-      <div>
-        We couln't create an account for you because:
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <div id="sign-up-errors"></div>
 
   <% end %>
   <!-- put message here re successful sign up -->
@@ -88,7 +79,7 @@
 
 <!-- SIGN UP FORM END -->
 
-<!-- SIGN IN FORM SECTION -->
+<!-- SIGN IN FORM SECTION (invisible when sign up form is visible) -->
 
 <div class="col-md-5 contact hide-form" id="sign-in-form">
   <h4>LOG IN TO SEE YOUR TRENDS</h4>
@@ -99,7 +90,7 @@
     <div>
       <%= password_field_tag :password, "", { class: "form-control", placeholder: "Password"} %>
     </div> <br />
-    <label><a href="#" id="sign-up-click"><h4>Click here to sign up</h4></a></label>
+    <label><a href="#" id="sign-up-click"><h4>Sign up for an account</h4></a></label>
     <%= submit_tag "Log In", class: "btn btn-send" %>
   <% end %>
 </div>

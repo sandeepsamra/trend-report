@@ -1,3 +1,27 @@
-Favourites Page
+<%= render "nav_bar" %>
 
-<%= link_to "Log out", sessions_path("current"), method: :delete %>
+<body id="top">
+
+<section class="hero" id="hero">
+<div class="container">
+
+    <div class="row" id="articles-page-content">
+
+        <div class="col-lg-12">
+            <h1 class="animated fadeInDown" align="center">Favourites</h1>
+            <br /><br /><br />
+        </div>
+
+        <h3><%= @user.fname %>'s fave trends</h3>
+
+        <!-- Favourites will go here -->
+        <!-- Message that says "You have no trends - add some!" if the user doesn't have favourites -->
+
+    </div>
+
+    <hr>
+
+</div>
+</section>
+
+</body>

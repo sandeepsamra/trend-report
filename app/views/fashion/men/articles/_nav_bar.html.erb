@@ -1,28 +1,61 @@
-<!-- creative menu -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="menu-wrap">
-      <nav class="menu">
-    <!-- Menu Links -->
-        <div class="icon-list">
-          <ul class="nav-link-ul">
-            <li class="nav-link-li"><a href="<%= root_path %>"><i class="fa fa-fw fa-home"></i><span>Home</span></a></li>
-            <li class="nav-link-li"><a href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
-            <ul class="hide-link">
-              <li class="hide-sublink"><a href="#">Food</a></li>
-              <li class="hide-sublink"><a>Fashion</a>
-                <ul class="sub-hide-link" class="sub-hide-link">
-                  <li class="subsublink"><a href="<%= fashion_women_articles_path %>">Women</a></li>
-                  <li class="subsublink"><a href="<%= fashion_men_articles_path %>">Men</a></li>
-                </ul>
+<% if current_user %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="menu-wrap">
+        <nav class="menu">
+      <!-- Menu Links -->
+          <div class="icon-list">
+            <ul class="nav-link-ul">
+              <li class="nav-link-li"><a href="<%= user_favourites_path %>"><i class="fa fa-fw fa-home"></i><span>Favourites</span></a></li>
+              <li class="nav-link-li"><a href="#"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
+              <ul class="hide-link">
+                <li class="hide-sublink"><a href="#">Food</a></li>
+                <li class="hide-sublink"><a>Fashion</a>
+                  <ul class="sub-hide-link" class="sub-hide-link">
+                    <li class="subsublink"><a><%= link_to "Women", user_fashion_women_articles_path %></a></li>
+                    <li class="subsublink"><a><%= link_to "Men", user_fashion_men_articles_path %></a></li>
+                  </ul>
+                </li>
+              </ul>
+              </li>
+              <li class="nav-link-li"><i class="fa fa-fw fa-home"></i><span><%= link_to "Log out", sessions_path("current"), method: :delete %></span></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    <button class="menu-button" id="open-button"></button>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="menu-wrap">
+        <nav class="menu">
+      <!-- Menu Links -->
+          <div class="icon-list">
+            <ul class="nav-link-ul">
+              <li class="nav-link-li"><a href="<%= root_path %>"><i class="fa fa-fw fa-home"></i><span>Home</span></a></li> <!-- only display if user not logged in -->
+              <!-- if user is logged in, display link to favourites -->
+              <li class="nav-link-li"><a href="#"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
+              <ul class="hide-link">
+                <li class="hide-sublink"><a href="#">Food</a></li>
+                <li class="hide-sublink"><a>Fashion</a>
+                  <ul class="sub-hide-link" class="sub-hide-link">
+                    <li class="subsublink"><a href="<%= fashion_women_articles_path %>">Women</a></li>
+                    <li class="subsublink"><a href="<%= fashion_men_articles_path %>">Men</a></li>
+                  </ul>
+                </li>
+              </ul>
               </li>
             </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
+          </div>
+        </nav>
+      </div>
+    <button class="menu-button" id="open-button"></button>
     </div>
-  <button class="menu-button" id="open-button"></button><!-- menu button -->
-  </div><!--/row-->
-</div><!--/container-->
-<!-- nav bar ends here -->
+  </div>
+
+<% end %>

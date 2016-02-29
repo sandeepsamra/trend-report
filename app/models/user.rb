@@ -6,10 +6,15 @@ class User < ActiveRecord::Base
   validates :fname, presence: true,
                     length: { minimum: 4 }
 
-  validates :fname, presence: true,
+  validates :lname, presence: true,
                     length: { minimum: 4 }
   
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+  validates :email, presence: true
 
   validates :username, presence: true
+
+  validates :password,
+  length: { in: 6..20 }, on: :create
+
 end

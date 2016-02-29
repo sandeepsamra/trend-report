@@ -1,10 +1,10 @@
 class Fashion::ArticlesController < ApplicationController
 
   def index
-    if params[:search]
-      @article = Article.search(params[:search]).order("created_at DESC")
+    if params[:query]
+      @article = Article.search(params[:query]).order("created_at DESC")
     else
-      @article = Article.all.order("created_at DESC")
+      @article = Article.all
     end
     #render json: @article, root: false
   end

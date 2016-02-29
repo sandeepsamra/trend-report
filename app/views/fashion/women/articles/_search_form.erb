@@ -3,17 +3,11 @@
 </head>
 <body>
   <!-- view rendered will be the index view of our articles resource -->
+  <div class="col-md-3">
   <%= form_tag(fashion_women_articles_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-    <div class="input-append">
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <%= text_field_tag :query, "Search Articles" %>
-      <button class="btn" type="submit"><i class="icon-search"></i></button>
-    </div>
+      <%= text_field_tag :query, "", {placeholder: "Search Articles"} %>
+      <%= submit_tag "Go", class: "btn btn-send" %>
   <% end %>
   <%= yield %>
+  </div>
 </body>

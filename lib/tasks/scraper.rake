@@ -10,6 +10,6 @@ namespace :scraper do
   fs.scrape_fashionbeans
   fs.scrape_sharp
   fs.scrape_details
-  fs.scrape_askmen
+  #fs.scrape_askmen
   end
 end

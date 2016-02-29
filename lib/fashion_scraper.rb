@@ -1,5 +1,5 @@
 require 'open-uri'
-
+require 'pry'
 class FashionScraper
 
   def scrape_www
@@ -110,7 +110,6 @@ class FashionScraper
       image = article.css('picture img').attr('src')
       title = article.css('div.post-copy h2').text
       link = article.css('a')[0].attr('href')
-      
       Article.create(
         url: link,
         image: image.value,
@@ -121,37 +120,39 @@ class FashionScraper
     end
   end
 
-   details = Nokogiri::HTML(open("http://www.details.com/fashion-style/what-to-wear-now"))
+  def scrape_details
+    details = Nokogiri::HTML(open("http://www.details.com/fashion-style/what-to-wear-now"))
     details.css('li.component-river-item').each do |article|
-      image = article.css('img')[0].attr('alt')
       title = article.css('h3.feature-item-hed a').text
-      url = "http://www.details.com"
-      link = "#{url}#{article.css('h3.feature-item-hed a').attr('href')}"
+      link = "http://www.details.com"
+      image = "#{link}/#{article.css('img')[0].attr('alt')}"
+      url = "#{link}#{article.css('h3.feature-item-hed a').attr('href')}"
       
       Article.create(
-        url: link,
-        image: image.value,
+        url: url,
+        image: image,
         title: title,
         category: "mfashion",
         source: "Details"
       )
     end
   end
-
-  askmen = Nokogiri::HTML(open("http://ca.askmen.com/style/fashion_trends/"))
-    askmen.css('div.articleTile').each do |article|
-    image = article.css('img')[0].attr('data-src')
-    title = article.css('div.title a').text
-    url = "http://ca.askmen.com"
-    link = "#{url}#{article.css('div.title a').attr('href')}"
-
-     Article.create(
-        url: link,
-        image: image.value,
-        title: title,
-        category: "mfashion",
-        source: "Ask Men"
-      )
-    end
-  end
+  
+  # def scrape_askmen
+  #   askmen = Nokogiri::HTML(open("http://ca.askmen.com/style/fashion_trends/"))
+  #   askmen.css('div.articleTile').each do |article|
+  #     image = article.css('img')[0].attr('data-src')
+  #     title = article.css('div.title a').text
+  #     url = "http://ca.askmen.com"
+  #     link = "#{url}#{article.css('div.title a').attr('href')}"
+      
+  #     Article.create(
+  #       url: link,
+  #       image: image,
+  #       title: title,
+  #       category: "mfashion",
+  #       source: "Ask Men"
+  #     )
+  #   end
+  # end
 end

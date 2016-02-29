@@ -1,16 +1,16 @@
 class FavouritesController < ApplicationController
 
+  before_filter :restrict_access
+
   def index
-    #user_id = current user.id
-    #if favourites.user_id == current user_id
-    #favourite.each do |i|
-    #show title, image, author, link
+    #@favourites = Favourites.all
+    @user = current_user
   end
 
   def create
     #user_id = id of current user
     #when user clicks save button under article
-    #favourite.user_id = current user.id
+    #favourite.user_id = current_user.id
     #favourite.save
   end
 

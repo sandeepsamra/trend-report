@@ -53,34 +53,25 @@
   <h4>SIGN UP & SAVE YOUR FAVES</h4>
   <%= form_for @user do |f| %>
 
-    <div class="form-group">
-        <%= f.text_field :fname, class: "form-control", placeholder: "First Name" %>
+    <div class="form-group" id="form-group-fname">
+        <%= f.text_field :fname, id: "form-fname", class: "form-control", placeholder: "First Name" %>
     </div>
-    <div class="form-group">
-        <%= f.text_field :lname, class: "form-control", placeholder: "Last Name" %>
+    <div class="form-group" id="form-group-lname">
+        <%= f.text_field :lname, id: "form-lname", class: "form-control", placeholder: "Last Name" %>
     </div>
-    <div class="form-group">
-        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+    <div class="form-group" id="form-group-email">
+        <%= f.text_field :email, id: "form-email", class: "form-control", placeholder: "Email" %>
     </div>
-    <div class="form-group">
-        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+    <div class="form-group" id="form-group-password">
+        <%= f.password_field :password, id: "form-password", class: "form-control", placeholder: "Password" %>
     </div>
-    <div class="form-group">
-        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+    <div class="form-group" id="form-group-pconfirm">
+        <%= f.password_field :password_confirmation, id: "form-pconfirm", class: "form-control", placeholder: "Confirm Password" %>
     </div>
     <label><a href="#" id="log-in-click"><h4>Log in to your account</h4></a></label>
     <%= f.submit "Sign Up", class: "btn btn-send" %>
 
-    <% if @user.errors.any? %>
-      <div>
-        We couln't create an account for you because:
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <div id="sign-up-errors"></div>
 
   <% end %>
   <!-- put message here re successful sign up -->

@@ -137,4 +137,21 @@ class FashionScraper
       )
     end
   end
+
+  askmen = Nokogiri::HTML(open("http://ca.askmen.com/style/fashion_trends/"))
+    askmen.css('div.articleTile').each do |article|
+    image = article.css('img')[0].attr('data-src')
+    title = article.css('div.title a').text
+    url = "http://ca.askmen.com"
+    link = "#{url}#{article.css('div.title a').attr('href')}"
+
+     Article.create(
+        url: link,
+        image: image.value,
+        title: title,
+        category: "mfashion",
+        source: "Ask Men"
+      )
+    end
+  end
 end

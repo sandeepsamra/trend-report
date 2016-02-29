@@ -13,6 +13,15 @@
         </div>
 
         <h3 align="center"><%= @user.fname %>'s fave trends</h3>
+        
+        <br />
+        <br />
+
+        <% if @favourite == []  %>
+            <h5>You have no favourites! Explore and add some.</h5>
+            <br />
+            <br />
+        <% else %>
 
         <% @favourite.each do |favourite| %>
             <% if favourite.user_id == current_user.id %>
@@ -29,6 +38,8 @@
                 </div>
                 <!-- if user is logged in, display button to save to favourites -->
             <% end %>
+        <% end %>
+
         <% end %>
 
         <!-- Favourites will go here -->

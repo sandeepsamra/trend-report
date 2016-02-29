@@ -3,19 +3,28 @@ class FavouritesController < ApplicationController
   before_filter :restrict_access
 
   def index
-    #@favourites = Favourites.all
     @user = current_user
+    @favourite = Favourite.all
   end
 
   def create
-    #user_id = id of current user
-    #when user clicks save button under article
-    #favourite.user_id = current_user.id
-    #favourite.save
+    @favourite = Favourite.new
+    @favourite.title = params[:title]
+    @favourite.url = params[:url]
+    @favourite.image = params[:image]
+    @favourite.source = params[:source]
+    @favourite.category = params[:category]
+    @favourite.user_id = current_user.id
+    if @favourite.save
+      redirect_to user_favourites_path
+    end
   end
 
-  def delete
-    #when user clicks delete button under article on favourites index
-    #favourite.destroy
+  def destroy
+    @favourite = Favourite.find_by(id: params[:id])
+    @favourite.delete
+    if @favourite.delete
+      redirect_to user_favourites_path
+    end
   end
 end

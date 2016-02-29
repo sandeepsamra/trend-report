@@ -1,7 +1,7 @@
 class Fashion::ArticlesController < ApplicationController
 
   def index
-    @article = Article.all
+    @article = Article.all.order("created_at DESC")
     #render json: @article, root: false
   end
 

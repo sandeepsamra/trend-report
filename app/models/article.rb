@@ -6,4 +6,6 @@ class Article < ActiveRecord::Base
 
   validates :image, uniqueness: true
 
+  scope :search, -> (query) { where(['title LIKE ? OR source LIKE ?', "%#{query}%", "%#{query}%"])}
+
 end

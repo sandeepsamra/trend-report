@@ -1,13 +1,26 @@
-<head>
-  <title>Search</title>
-</head>
-<body>
+<% if current_user %>
+<div>
   <!-- view rendered will be the index view of our articles resource -->
   <div class="col-md-3">
-  <%= form_tag(fashion_women_articles_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+  <%= form_tag(user_fashion_women_articles_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :query, "", {placeholder: "Search Articles"} %>
       <%= submit_tag "Go", class: "btn btn-send" %>
   <% end %>
   <%= yield %>
   </div>
-</body>
+</div>
+
+<% else %>
+
+<div>
+  <!-- view rendered will be the index view of our articles resource -->
+  <div class="col-md-3">
+  <%= form_tag(fashion_women_articles_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :query, "", {placeholder: "Search Articles"} %>
+      <%= submit_tag "Go", class: "btn btn-send" %>
+  <% end %>
+  <%= yield %>
+  </div>
+</div>
+
+<% end %>

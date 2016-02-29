@@ -120,4 +120,21 @@ class FashionScraper
       )
     end
   end
+
+   details = Nokogiri::HTML(open("http://www.details.com/fashion-style/what-to-wear-now"))
+    details.css('li.component-river-item').each do |article|
+      image = article.css('img')[0].attr('alt')
+      title = article.css('h3.feature-item-hed a').text
+      url = "http://www.details.com"
+      link = "#{url}#{article.css('h3.feature-item-hed a').attr('href')}"
+      
+      Article.create(
+        url: link,
+        image: image.value,
+        title: title,
+        category: "mfashion",
+        source: "Details"
+      )
+    end
+  end
 end

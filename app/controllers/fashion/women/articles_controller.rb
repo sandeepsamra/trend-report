@@ -1,11 +1,11 @@
 class Fashion::Women::ArticlesController < ApplicationController
 
-  def index
-    @article = Article.all
-<<<<<<< HEAD
-=======
-    #render json: @article, root: false
->>>>>>> bf16a6cac9ecf354203a881b3e7f286a7e848e76
+   def index
+   	if params[:query]
+      @article = Article.search(params[:query]).order("created_at DESC")
+    else
+      @article = Article.all #.order("created_at DESC")
+    end
   end
 
   def create

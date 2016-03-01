@@ -1,14 +1,16 @@
-$(window).load(function(){
-	$('#preloader').fadeOut('slow',function(){$(this).remove();});
-});
+// $(window).load(function(){
+// 	$('#preloader').fadeOut('slow',function(){$(this).remove();});
+// });
 
 /******************************************************************************************************************************
 Menu
 *******************************************************************************************************************************/ 
 
 $(document).ready(function() {
-
-	var bodyEl = document.body,
+  
+  $('#preloader').fadeOut('slow',function(){$(this).remove();});
+	
+  var bodyEl = document.body,
 		//content = document.querySelector( '.content-wrap' ),
 		openbtn = document.getElementById( 'open-button' ),
 		closebtn = document.getElementById( 'close-button' ),
@@ -52,7 +54,7 @@ $(document).ready(function() {
     $('ul#hide-link').removeClass('hide-link');
   });
 
-   $('#nav-link-click').on('mouseout', function() {
+  $('#nav-link-click').on('mouseout', function() {
     $('ul#hide-link').addClass('hide-link');
   });
 
@@ -64,13 +66,10 @@ $(document).ready(function() {
     $('ul#sub-hide-link').addClass('sub-hide-link');
   });
 
-});
 
 /******************************************************************************************************************************
 Log in & sign up forms
 *******************************************************************************************************************************/ 
-
-$(document).ready(function() {
 
 //Switch between forms on landing page
 
@@ -130,14 +129,10 @@ $(document).ready(function() {
     });
   });
 
-});
-
 /******************************************************************************************************************************
 Masonry Grid
 *******************************************************************************************************************************/ 
 
-
-$(document).ready(function(){
   $(function(){
     var $container = jQuery('#masonry-grid').masonry({
       itemSelector: '.grid-item'
@@ -146,13 +141,10 @@ $(document).ready(function(){
       $container.masonry('layout');
     });
   });
-});
 
 /******************************************************************************************************************************
 Waypoints
 *******************************************************************************************************************************/ 
-
-$(document).ready(function() {
 
 	$('.wp1').waypoint(function() {
 		$('.wp1').addClass('animated fadeInLeft');
@@ -185,19 +177,13 @@ $(document).ready(function() {
 		offset: '75%'
 	});
 
-});
-
 /******************************************************************************************************************************
 Nav Button
 *******************************************************************************************************************************/ 
 
-$(window).load(function() {
-
 	$('.nav_slide_button').click(function() {
 		$('.pull').slideToggle();
 	});
-
-});
 
 
 $(function() {
@@ -221,9 +207,11 @@ $(function() {
 /******************************************************************************************************************************
 Nav Transform
 *******************************************************************************************************************************/ 
-$(document).ready(function(){
+
   document.querySelector("#open-button").addEventListener("click", function() {
   	this.classList.toggle("active");
   });
+
+//closing tag for $(document).ready  
 });
 

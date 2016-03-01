@@ -651,6 +651,12 @@ li.hide-sublink:hover ul.sub-hide-link {
 	color:#E04343;
 	font-size: 15px;	
 }
+.hero h5 {
+	font-size: 20px;
+
+	margin: 0;
+	font-weight: 600;
+}
 .hero p {
 	letter-spacing:1px;
 	color:#fff;

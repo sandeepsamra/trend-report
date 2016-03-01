@@ -52,6 +52,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #pagination
 gem 'kaminari'
 
+#jquery infinite scroll
+gem 'masonry-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

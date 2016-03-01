@@ -17,4 +17,6 @@
 //= require react_ujs
 //= require components
 //= require bootstrap.min
+//= require masonry.pkgd.min.js
+//= require imagesloaded.pkgd.min.js
 //= require_tree .

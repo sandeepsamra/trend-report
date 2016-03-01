@@ -131,6 +131,18 @@ $(document).ready(function() {
   });
 
 });
+
+$(document).ready(function(){
+  $(function(){
+    var $container = jQuery('#masonry-grid').masonry({
+      itemSelector: '.grid-item'
+    });
+    $container.imagesLoaded().progress( function() {
+      $container.masonry('layout');
+    });
+  });
+});
+
 /******************************************************************************************************************************
 Waypoints
 *******************************************************************************************************************************/ 
@@ -204,8 +216,9 @@ $(function() {
 /******************************************************************************************************************************
 Nav Transform
 *******************************************************************************************************************************/ 
-
-document.querySelector("#nav-toggle").addEventListener("click", function() {
-	this.classList.toggle("active");
+$(document).ready(function(){
+  document.querySelector("#open-button").addEventListener("click", function() {
+  	this.classList.toggle("active");
+  });
 });
 

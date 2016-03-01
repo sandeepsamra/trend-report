@@ -4,19 +4,17 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-.thumb-women {
+/*.thumb-women {
   margin-bottom: 40px;
   margin-top: 40px;
   display: inline-block;
-  height:430px;
 }
 
 .thumb-men {
   margin-bottom: 40px;
   margin-top: 40px;
   display: inline-block;
-  height:300px;
-}
+}*/
 
 h1.articles-page-header {
   font-family: 'Open Sans',sans-serif;
@@ -28,4 +26,12 @@ div#articles-page-content {
 
 button {
   outline: none;
+}
+
+.grid-item {
+  width: 22%;
+  margin: 10px 10px 10px 10px ;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }

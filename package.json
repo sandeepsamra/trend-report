@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sandeepsamra/FINAL-trend-report#readme",
   "dependencies": {
+    "coffee-script": "^1.10.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   }

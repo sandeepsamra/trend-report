@@ -52,9 +52,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #pagination
 gem 'kaminari'
 
-#infinite scroll
-gem 'jquery-infinite-pages'
-
 # Use unicorn as the app server
 # gem 'unicorn'
 

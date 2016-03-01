@@ -98,8 +98,8 @@ class FashionScraper
         url: link.value,
         image: image.value,
         title: title.value,
-        category: "mfashion",
-        source: "Fashion Beans"
+        source: "Fashion Beans",
+        category: "mfashion"
       )
     end
   end
@@ -114,8 +114,8 @@ class FashionScraper
         url: link,
         image: image.value,
         title: title,
-        category: "mfashion",
-        source: "Sharp for Men"
+        source: "Sharp for Men",
+        category: "mfashion"
       )
     end
   end
@@ -132,8 +132,8 @@ class FashionScraper
         url: link,
         image: image,
         title: title,
+        source: "Ask Men",
         category: "mfashion",
-        source: "Ask Men"
        )
      end
    end

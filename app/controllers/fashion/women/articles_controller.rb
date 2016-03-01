@@ -1,6 +1,6 @@
 class Fashion::Women::ArticlesController < ApplicationController
 
-   def index
+  def index
    	if params[:query]
       @article = Article.search(params[:query])
     else
@@ -8,8 +8,7 @@ class Fashion::Women::ArticlesController < ApplicationController
     end
   end
 
-  def create
+ 	def create
 
-  end
-
+ 	end
 end

@@ -163,7 +163,7 @@ $container.imagesLoaded(function(){
 
 $container.infinitescroll({
   navSelector  : '#infinite-scrolling .page_current',    // selector for the paged navigation 
-  nextSelector : '#infinite-scrolling .page a next',  // selector for the NEXT link (to page 2)
+  nextSelector : '#infinite-scrolling .next a',  // selector for the NEXT link (to page 2)
   itemSelector : '.grid-item',     // selector for all items you'll retrieve
   loading: {
       finishedMsg: 'No more trends to load.',

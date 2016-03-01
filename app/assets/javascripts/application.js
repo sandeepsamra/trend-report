@@ -21,4 +21,3 @@
 //= require masonry.pkgd.min.js
 //= require imagesloaded.pkgd.min.js
 //= require_tree .
-//= require masonry/jquery.infinitescroll.min

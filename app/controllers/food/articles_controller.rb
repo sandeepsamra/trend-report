@@ -4,4 +4,8 @@ class Food::ArticlesController < ApplicationController
     @article = Article.all
   end
 
+  def create
+
+  end
+
 end

@@ -8,7 +8,7 @@
             <li class="nav-link-li"><a href="<%= user_favourites_path %>"><i class="fa fa-fw fa-home"></i><span>Favourites</span></a></li>
             <li class="nav-link-li"><a href="#"><i class="fa fa-fw fa-home"></i><span>Categories</span></a>
             <ul class="hide-link">
-              <li class="hide-sublink"><a href="#">Food</a></li>
+              <li class="hide-sublink"><a href="<%= user_food_articles_path(current_user.id) %>">Food</a></li>
               <li class="hide-sublink"><a>Fashion</a>
                 <ul class="sub-hide-link" class="sub-hide-link">
                   <li class="subsublink"><a><%= link_to "Women", user_fashion_women_articles_path %></a></li>

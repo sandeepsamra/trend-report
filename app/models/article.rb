@@ -6,8 +6,7 @@ class Article < ActiveRecord::Base
 
   validates :image, uniqueness: true
 
-   def self.search(query)
+  def self.search(query)
     where("title ilike ?", "%#{query}%")
   end
-
 end

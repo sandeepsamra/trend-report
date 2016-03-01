@@ -2,7 +2,6 @@
 <%= render "nav_bar" %>
 <section class="hero" id="hero">
 <div class="container">
-
     <div class="row" id="articles-page-content">
 
         <div class="col-lg-12">
@@ -24,12 +23,12 @@
                 <!-- if user is logged in, display button to save to favourites -->
             <% end %>
         <% end %>
-
     </div>
-
     <hr>
-
 </div>
 </section>
-
+<!--infinite scrolling-->
+  <div id="infinite-scrolling">
+    <%= paginate @article%>
+  </div>
 </body>

@@ -40,12 +40,18 @@ gem 'react-rails'
 #schedule the rake tasks
 gem 'whenever', :require => false
 
-gem 'pry'
+gem 'pry-byebug'
 
 gem 'active_model_serializers'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+#pagination
+gem 'kaminari'
+
+#infinite scroll
+gem 'jquery-infinite-pages'
 
 # Use unicorn as the app server
 # gem 'unicorn'

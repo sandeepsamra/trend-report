@@ -4,7 +4,7 @@ class Fashion::Men::ArticlesController < ApplicationController
    	if params[:query]
       @article = Article.search(params[:query])
     else
-      @article = Article.all #.order("created_at DESC")
+      @article = Article.all.page(params[:page])
     end
     #render json: @article, root: false
   end

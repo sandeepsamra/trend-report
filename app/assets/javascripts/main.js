@@ -144,14 +144,16 @@ Masonry Infinite Scroll
 *******************************************************************************************************************************/
 // infinitescroll() is called on the element that surrounds 
 // the items you will be loading more of
-  $('div.container').infinitescroll({
+  $(function(){
+    $('div.container').infinitescroll({
  
-    navSelector  : "nav.pagination",            
+        navSelector  : "nav.pagination",            
                    // selector for the paged navigation (it will be hidden)
-    nextSelector : "nav.pagination a:first",
+        nextSelector : "nav.pagination a:first",
                    // selector for the NEXT link (to page 2)
-    itemSelector : "#masonry-grid div.grid-item"         
+        itemSelector : "#masonry-grid"      
                    // selector for all items you'll retrieve
+    });
   });
 /******************************************************************************************************************************
 Waypoints

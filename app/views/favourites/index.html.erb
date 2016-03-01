@@ -15,7 +15,7 @@
             
             <br />
             <br />
-            <!-- If there are not favourites, display the following: -->
+        <!-- If there are not favourites, display the following: -->
             <% if @favourite == [] %>
                 <h5 align="center">You have no favourites! Explore and add some.</h5>
                 <br />
@@ -50,6 +50,7 @@
         <br />
         <br />
 
+        <!-- If there are food favourites, display the following: -->
             <% if @favourite.include?(@favourite.find_by(category: "food")) %>
                 <h2 align="center">Food Trends</h2>
             <% end %>

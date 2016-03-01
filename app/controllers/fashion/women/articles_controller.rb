@@ -6,6 +6,7 @@ class Fashion::Women::ArticlesController < ApplicationController
     else
       @article = Article.all.page(params[:page]) #.order("created_at DESC")
     end
+  end
 
   def create
 

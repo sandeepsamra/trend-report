@@ -155,8 +155,8 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-infinite-pages
   jquery-rails
-  kaminari
   jquery-turbolinks
+  kaminari
   nokogiri
   pg
   pry-byebug

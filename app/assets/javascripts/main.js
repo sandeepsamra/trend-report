@@ -149,6 +149,40 @@ $(document).ready(function(){
 });
 
 /******************************************************************************************************************************
+Masonry Infinite Scroll
+*******************************************************************************************************************************/ 
+$(document).ready(function(){
+  var $container = jQuery('#masonry-grid').masonry;
+
+$container.imagesLoaded(function(){
+  $container.masonry({
+    itemSelector: '.grid-item',
+    columnWidth: 100
+  });
+});
+
+$container.infinitescroll({
+  navSelector  : '#infinite-scrolling .page_current',    // selector for the paged navigation 
+  nextSelector : '#infinite-scrolling .page a next',  // selector for the NEXT link (to page 2)
+  itemSelector : '.grid-item',     // selector for all items you'll retrieve
+  loading: {
+      finishedMsg: 'No more trends to load.',
+    }
+  },
+  // trigger Masonry as a callback
+  function( newElements ) {
+    // hide new items while they are loading
+    var $newElems = $( newElements ).css({ opacity: 0 });
+    // ensure that images load before adding to masonry layout
+    $newElems.imagesLoaded(function(){
+      // show elems now they're ready
+      $newElems.animate({ opacity: 1 });
+      $container.masonry( 'appended', $newElems, true ); 
+    });
+  }
+);
+});
+/******************************************************************************************************************************
 Waypoints
 *******************************************************************************************************************************/ 
 

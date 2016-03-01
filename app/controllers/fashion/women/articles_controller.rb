@@ -1,14 +1,11 @@
 class Fashion::Women::ArticlesController < ApplicationController
 
-  def index
-   	if params[:query]
-      @article = Article.search(params[:query])
+   def index
+    if params[:query]
+      @article = Article.search(params[:query]).where(category: "wfashion")
     else
-      @article = Article.all.page(params[:page]) #.order("created_at DESC")
+      @article = Article.where(category: "wfashion").page(params[:page])
     end
   end
 
- 	def create
-
- 	end
 end

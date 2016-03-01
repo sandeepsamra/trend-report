@@ -14,7 +14,6 @@
 
     <div id="masonry-grid">
       <% @article.each do |article| %>
-        <% if article.category == "wfashion" %>
         <!--<div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
           <div class="grid-item">
               <a class="thumbnail" href="<%= article.url %>" target="blank">
@@ -26,7 +25,6 @@
                 <a><h4><%= link_to "Save", user_favourites_path(article, :category => article.category, :image => article.image, :title => article.title, :url => article.url, :source => article.source), method: :post %></h4></a>
               <% end %>
             </div>
-          <% end %>
         <% end %>
       </div>
     <hr>
@@ -34,6 +32,6 @@
 </section>
 <!--infinite scrolling-->
   <div id="infinite-scrolling">
-    <%= paginate @article%>
+    <%= paginate @article %>
   </div>
 </body>

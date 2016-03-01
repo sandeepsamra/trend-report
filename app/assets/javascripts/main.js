@@ -144,13 +144,13 @@ Masonry Infinite Scroll
 *******************************************************************************************************************************/
 // infinitescroll() is called on the element that surrounds 
 // the items you will be loading more of
-  $('#content').infinitescroll({
+  $('div.container').infinitescroll({
  
-    navSelector  : "#infinite-scrolling .page_current",            
+    navSelector  : "nav.pagination",            
                    // selector for the paged navigation (it will be hidden)
-    nextSelector : '#infinite-scrolling .next a',,    
+    nextSelector : "nav.pagination a:first",
                    // selector for the NEXT link (to page 2)
-    itemSelector : '.grid-item'         
+    itemSelector : "#masonry-grid div.grid-item"         
                    // selector for all items you'll retrieve
   });
 /******************************************************************************************************************************
@@ -214,7 +214,6 @@ $(function() {
 
 /******************************************************************************************************************************
 Nav Transform
-<<<<<<< HEAD
 *******************************************************************************************************************************/
   document.querySelector("#open-button").addEventListener("click", function() {
   	this.classList.toggle("active");

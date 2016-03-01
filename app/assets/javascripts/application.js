@@ -19,6 +19,6 @@
 //= require components
 //= require bootstrap.min
 //= require masonry.pkgd.min.js
-//= require imagesloaded.pkgd.min.js
 //= require jquery.infinitescroll.min.js
+//= require imagesloaded.pkgd.min.js
 //= require_tree .

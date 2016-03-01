@@ -1,6 +1,6 @@
 class Fashion::Women::ArticlesController < ApplicationController
 
-   def index
+  def index
     if params[:query]
       @article = Article.search(params[:query]).where(category: "wfashion")
     else

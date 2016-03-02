@@ -6,6 +6,8 @@ class FavouritesController < ApplicationController
     @user = current_user
     if params[:query]
       @favourite = Favourite.search(params[:query]).page(params[:page])
+      flash.now[:notice] = "No favourites matching your search term." if @favourite.empty?
+      @favourite = Favourite.page(params[:page]) if @favourite.empty?
     else
       @favourite = Favourite.page(params[:page])
     end

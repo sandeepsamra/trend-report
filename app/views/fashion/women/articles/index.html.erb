@@ -9,8 +9,12 @@
         <br /><br /><br />
         <%= render "search_form" %>
         <br /><br /><br />
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: "alert alert-danger" %>
+        <% end -%>
       </div>
      </div>
+      <hr>
 
     <div id="masonry-grid">
       <% @article.each do |article| %>

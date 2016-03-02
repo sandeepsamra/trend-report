@@ -13,7 +13,9 @@
 
             <h3 align="center"><%= @user.fname %>'s fave trends</h3>
             <br />
+            <% if !(@favourite == []) %>
             <%= render "search_form" %>
+            <% end %>
             <br />
             
             <br />

@@ -32,8 +32,8 @@
                     :source => article.source
                   }, class: 'save-article' %>
                 </h4>
-                <% elsif current_user && Favourite.find_by(title: article.title) %>
-                <h4>Already saved!</h4>
+              <% elsif current_user && Favourite.find_by(title: article.title) %>
+                <h4>Saved!</h4>
                 </a>
               <% end %>
             </div>

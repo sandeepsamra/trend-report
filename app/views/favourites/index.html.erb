@@ -1,58 +1,61 @@
 <%= render "nav_bar" %>
 
 <body id="top">
+  <section class="hero" id="hero">
+      <div class="container">
 
-<section class="hero" id="hero">
-    <div class="container">
+          <div class="row" id="articles-page-content">
+              <div class="col-lg-12">
+                  <h1 class="animated fadeInDown" align="center">Favourites</h1>
+                  <br /><br /><br />
+              </div>
 
-        <div class="row" id="articles-page-content">
-            <div class="col-lg-12">
-                <h1 class="animated fadeInDown" align="center">Favourites</h1>
-                <br /><br /><br />
-            </div>
+              <h3 align="center"><%= @user.fname %>'s fave trends</h3>
+              <br />
+              <% if !(@favourite == []) %>
+              <%= render "search_form" %>
+              <% end %>
+              <br /><br /><br />
 
-            <h3 align="center"><%= @user.fname %>'s fave trends</h3>
-            <br />
-            <% if !(@favourite == []) %>
-            <%= render "search_form" %>
+              <% flash.each do |name, msg| -%>
+                <%= content_tag :div, msg, class: "alert alert-danger" %>
+              <% end -%>
+
+              <br />
+              <hr>
+          <!-- If there are not favourites, display the following: -->
+              <% if @favourite == [] %>
+                  <h5 align="center">You have no favourites! Explore and add some.</h5>
+                  <br />
+                  <br />
+                  <div align="center"><%= image_tag ("dancing_heart.gif") %></div>
+          </div>
+
+              <% else %>
+
+                <div id="masonry-parent">
+                 <div id="masonry-grid">
+                  <% @favourite.each do |favourite| %>
+                      <div class="grid-item">
+                          <a class="thumbnail" href="<%= favourite.url %>" target="blank">
+                            <img class="img-responsive" src="<%= favourite.image %>" alt="">
+                          </a>
+                          <h4 style="color:black"><%= favourite.title %></h4>
+                          <h4>Source: <%= favourite.source %></h4>
+                          <%= social_share_button_tag(favourite.url, :popup => "true", desc: "Keep up with the hottest trends!", via: "TrendReport") %>
+                            <% if current_user %>
+                                <a><h4><%= link_to "Delete", user_favourite_path(favourite, :id => favourite.id), method: :delete %></h4></a>
+                            <% end %>
+                        </div>
+                    <% end %>
+                  </div>
+                  </div>
+
             <% end %>
-            <br />
-            
-            <br />
-            <br />
-        <!-- If there are not favourites, display the following: -->
-            <% if @favourite == [] %>
-                <h5 align="center">You have no favourites! Explore and add some.</h5>
-                <br />
-                <br />
-                <div align="center"><%= image_tag ("dancing_heart.gif") %></div>
-        </div>
 
-            <% else %>
-
-    <div id="masonry-parent">
-     <div id="masonry-grid">
-      <% @favourite.each do |favourite| %>
-          <div class="grid-item">
-              <a class="thumbnail" href="<%= favourite.url %>" target="blank">
-                <img class="img-responsive" src="<%= favourite.image %>" alt="">
-              </a>
-              <h4 style="color:black"><%= favourite.title %></h4>
-              <h4>Source: <%= favourite.source %></h4>
-              <%= social_share_button_tag(favourite.url, :popup => "true", desc: "Keep up with the hottest trends!", via: "TrendReport") %>
-                <% if current_user %>
-                    <a><h4><%= link_to "Delete", user_favourite_path(favourite, :id => favourite.id), method: :delete %></h4></a>
-                <% end %>
-            </div>
-        <% end %>
+      <hr>
       </div>
-      </div>
-
-        <% end %>
-
-    <hr>
-    </div>
-</section>
+  </section>
 <!--infinite scrolling-->
   <div id="infinite-scrolling" class="test">
     <%= paginate @favourite %>

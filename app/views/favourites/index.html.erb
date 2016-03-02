@@ -40,12 +40,9 @@
               </a>
               <h4 style="color:black"><%= favourite.title %></h4>
               <h4>Source: <%= favourite.source %></h4>
-              <% if current_user %>
-                <a>
-                <h4><%= link_to "Save", user_favourites_path(favourite, :category => favourite.category, :image => favourite.image, :title => favourite.title, :url => favourite.url, :source => favourite.source), method: :post %>
-                </h4>
-                </a>
-              <% end %>
+                <% if current_user %>
+                    <a><h4><%= link_to "Delete", user_favourite_path(favourite, :id => favourite.id), method: :delete %></h4></a>
+                <% end %>
             </div>
         <% end %>
       </div>

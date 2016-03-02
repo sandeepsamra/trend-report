@@ -19,9 +19,10 @@ class FavouritesController < ApplicationController
     @favourite.source = params[:source]
     @favourite.category = params[:category]
     @favourite.user_id = current_user.id
-    if @favourite.save
-      redirect_to user_favourites_path
-    end
+    @favourite.save
+
+    render json: {ok: !!@favourite }
+
   end
 
   def destroy

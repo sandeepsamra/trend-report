@@ -91,7 +91,9 @@ div#main-section {
 
 /* ==========================================================================Save & delete favourites========================================================================== */
 
-
+/*.hide-save {
+	display: none;
+}*/
 
 /* ==========================================================================HTML5 display definitions========================================================================== */
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary {
@@ -617,7 +619,10 @@ li.hide-sublink ul.sub-hide-link {
 }
 
 li.hide-sublink:hover ul.sub-hide-link {
+	padding-left: 0;
+	margin-left: 35px;
 	display: block;
+	background-color: white;
 }
 
 /* ==========================================================================Hero========================================================================== */

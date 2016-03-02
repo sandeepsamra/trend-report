@@ -16,6 +16,7 @@ $(document).ready(function(){
       }
     }).done(function(data) {
       if( data.ok ) {
+        link.parents('.article').append('<h4>Already saved!</h4>');
         link.remove();
       }
     });

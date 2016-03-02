@@ -22,7 +22,7 @@
               <h4 style="color:black"><%= article.title %></h4>
               <h4>Source: <%= article.source %></h4>
               <% if current_user && !(Favourite.find_by(title: article.title)) %>
-                <a class="save-saved-buttons">
+                <a class="save-saved-links">
                 <h4>
                   <%= link_to 'Save', user_favourites_path(article), data: {
                     category: article.category, 

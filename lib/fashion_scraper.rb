@@ -96,13 +96,13 @@ class FashionScraper
     fashionbeans = Nokogiri::HTML(open("http://www.fashionbeans.com/category/mens-fashion-trends/"))
     fashionbeans.css('div.catArticles').each do |article|
       image = article.css('a.left.relative img').attr('src')
-      title = article.css('h2 a').attr('title')
+      title = article.css('h2 a').text
       link = article.css('h2 a').attr('href')
 
       Article.create(
         url: link.value,
         image: image.value,
-        title: title.value,
+        title: title,
         source: "Fashion Beans",
         category: "mfashion"
       )

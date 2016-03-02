@@ -14,7 +14,7 @@ function attachSaveLinks() {
       }
     }).done(function(data) {
       if( data.ok ) {
-        link.parents('.article').append('<h4>Already saved!</h4>');
+        link.parents('.article').append('<h4>Saved!</h4>');
         link.remove();
       }
     });

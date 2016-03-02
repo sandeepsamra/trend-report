@@ -3,7 +3,7 @@
   <!-- view rendered will be the index view of our articles resource -->
   <div class="col-md-3">
     <div class="input-group">
-        <%= form_tag(user_fashion_women_articles_path, :method => "get", id: "search-form") do %>
+        <%= form_tag(user_fashion_women_articles_path(current_user.id), :method => "get", id: "search-form") do %>
         <%= text_field_tag :query, "", {placeholder: "Search trends"} %>
         <input class="btn btn-default" type="submit" value="Go!">
     </div>

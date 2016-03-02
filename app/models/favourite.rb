@@ -7,5 +7,9 @@ class Favourite < ActiveRecord::Base
   validates :url, uniqueness: true
 
   validates :image, uniqueness: true
+
+  def self.search(query)
+    where("title ilike ?", "%#{query}%")
+  end
   
 end

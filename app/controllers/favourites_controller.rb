@@ -4,7 +4,11 @@ class FavouritesController < ApplicationController
 
   def index
     @user = current_user
-    @favourite = Favourite.all
+    if params[:query]
+      @favourite = Favourite.search(params[:query]).page(params[:page])
+    else
+      @favourite = Favourite.page(params[:page])
+    end
   end
 
   def create

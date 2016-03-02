@@ -12,6 +12,9 @@
             </div>
 
             <h3 align="center"><%= @user.fname %>'s fave trends</h3>
+            <br />
+            <%= render "search_form" %>
+            <br />
             
             <br />
             <br />
@@ -25,57 +28,34 @@
 
             <% else %>
 
-        <!-- If there are fashion favourites, display the following: -->
-            <% if @favourite.include?(@favourite.find_by(category: "wfashion") || @favourite.find_by(category: "mfashion")) %>
-                <h2 align="center">Fashion Trends</h2>
-            <% end %>
-
-            <div id="masonry-grid">
-                <% @favourite.each do |favourite| %>
-                    <% if (favourite.user_id == current_user.id) && (favourite.category == "wfashion" || favourite.category == "mfashion") %>
-                        <div class="grid-item">
-                            <a class="thumbnail" href="<%= favourite.url %>" target="_blank">
-                                <img class="img-responsive" src="<%= favourite.image %>" alt="">
-                            </a>
-                            <h4 style="color:black"><%= favourite.title %></h4>
-                            <h4>Source: <%= favourite.source %></h4>
-                            <% if current_user %>
-                                <a><h4><%= link_to "Delete", user_favourite_path(favourite, :id => favourite.id), method: :delete %></h4></a>
-                            <% end %>
-                        </div>
-                    <% end %>
-                <% end %>
+    <div id="masonry-parent">
+     <div id="masonry-grid">
+      <% @favourite.each do |favourite| %>
+        <!--<div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
+          <div class="grid-item">
+              <a class="thumbnail" href="<%= favourite.url %>" target="blank">
+                <img class="img-responsive" src="<%= favourite.image %>" alt="">
+              </a>
+              <h4 style="color:black"><%= favourite.title %></h4>
+              <h4>Source: <%= favourite.source %></h4>
+              <% if current_user %>
+                <a>
+                <h4><%= link_to "Save", user_favourites_path(favourite, :category => favourite.category, :image => favourite.image, :title => favourite.title, :url => favourite.url, :source => favourite.source), method: :post %>
+                </h4>
+                </a>
+              <% end %>
             </div>
-
-        <br />
-        <br />
-
-        <!-- If there are food favourites, display the following: -->
-            <% if @favourite.include?(@favourite.find_by(category: "food")) %>
-                <h2 align="center">Food Trends</h2>
-            <% end %>
-
-            <div id="masonry-grid">
-                <% @favourite.each do |favourite| %>
-                    <% if (favourite.user_id == current_user.id) && (favourite.category == "food") %>
-                        <div class="grid-item">
-                            <a class="thumbnail" href="<%= favourite.url %>" target="_blank">
-                                <img class="img-responsive" src="<%= favourite.image %>" alt="">
-                            </a>
-                            <h4 style="color:black"><%= favourite.title %></h4>
-                            <h4>Source: <%= favourite.source %></h4>
-                            <% if current_user %>
-                                <a><h4><%= link_to "Delete", user_favourite_path(favourite, :id => favourite.id), method: :delete %></h4></a>
-                            <% end %>
-                        </div>
-                    <% end %>
-                <% end %>
-            </div>
+        <% end %>
+      </div>
+      </div>
 
         <% end %>
 
     <hr>
     </div>
 </section>
-
+<!--infinite scrolling-->
+  <div id="infinite-scrolling" class="test">
+    <%= paginate @favourite %>
+  </div>
 </body>

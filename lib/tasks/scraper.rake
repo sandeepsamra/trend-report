@@ -10,6 +10,8 @@ namespace :scraper do
   fs.scrape_glamour
   fs.scrape_fashionbeans
   fs.scrape_sharp
+  fs.scrape_askmen
+  fs.scrape_brostrick
   # Food Scraper
   food = FoodScraper.new
   food.scrape_bonappetit

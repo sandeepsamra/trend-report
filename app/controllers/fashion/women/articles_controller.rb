@@ -1,11 +1,11 @@
 class Fashion::Women::ArticlesController < ApplicationController
 
   def index
-    @article = Article.all
-  end
-
-  def create
-
+    if params[:query]
+      @article = Article.search(params[:query]).where(category: "wfashion").page(params[:page])
+    else
+      @article = Article.where(category: "wfashion").page(params[:page])
+    end
   end
 
 end

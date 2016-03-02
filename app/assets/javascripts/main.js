@@ -4,7 +4,7 @@
 
 /******************************************************************************************************************************
 Menu
-*******************************************************************************************************************************/ 
+*******************************************************************************************************************************/
 
 $(document).ready(function() {
   
@@ -66,10 +66,9 @@ $(document).ready(function() {
     $('ul#sub-hide-link').addClass('sub-hide-link');
   });
 
-
 /******************************************************************************************************************************
 Log in & sign up forms
-*******************************************************************************************************************************/ 
+*******************************************************************************************************************************/
 
 //Switch between forms on landing page
 
@@ -131,20 +130,49 @@ Log in & sign up forms
 
 /******************************************************************************************************************************
 Masonry Grid
-*******************************************************************************************************************************/ 
+*******************************************************************************************************************************/
 
-  $(function(){
-    var $container = jQuery('#masonry-grid').masonry({
-      itemSelector: '.grid-item'
-    });
-    $container.imagesLoaded().progress( function() {
-      $container.masonry('layout');
-    });
+function buildGrid () {
+
+  var $container = $('#masonry-grid').masonry({
+    itemSelector: '.grid-item'
   });
 
+  $container.imagesLoaded().progress( function() {
+    $container.masonry('layout');
+  });
+
+}
+
+buildGrid();
+
+/******************************************************************************************************************************
+Masonry Infinite Scroll
+*******************************************************************************************************************************/
+// infinitescroll() is called on the element that surrounds 
+// the items you will be loading more of
+
+function infiniteScrollFinished () {
+  var masonry_clone = $('#masonry-grid').clone();
+  $('#masonry-grid').remove();
+  $('#masonry-parent').append(masonry_clone);
+  buildGrid();
+
+}
+  
+  $('#masonry-grid').infinitescroll({
+ 
+    navSelector  : "nav.pagination",            
+                   // selector for the paged navigation (it will be hidden)
+    nextSelector : "nav.pagination a:first",
+                   // selector for the NEXT link (to page 2)
+    itemSelector : ".grid-item",         
+                   // selector for all items you'll retrieve
+
+  }, infiniteScrollFinished );
 /******************************************************************************************************************************
 Waypoints
-*******************************************************************************************************************************/ 
+*******************************************************************************************************************************/
 
 	$('.wp1').waypoint(function() {
 		$('.wp1').addClass('animated fadeInLeft');
@@ -176,42 +204,37 @@ Waypoints
 	}, {
 		offset: '75%'
 	});
-
 /******************************************************************************************************************************
 Nav Button
-*******************************************************************************************************************************/ 
-
+*******************************************************************************************************************************/
 	$('.nav_slide_button').click(function() {
 		$('.pull').slideToggle();
 	});
 
-
 $(function() {
 
-	$('a[href*=#]:not([href=#])').click(function() {
-		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-			if (target.length) {
-				$('html,body').animate({
-					scrollTop: target.offset().top - 125
-				}, 1000);
-				return false;
-			}
-		}
-	});
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top - 125
+                }, 1000);
+                return false;
+            }
+        }
+    });
 
 });
 
 /******************************************************************************************************************************
 Nav Transform
-*******************************************************************************************************************************/ 
-
+*******************************************************************************************************************************/
   document.querySelector("#open-button").addEventListener("click", function() {
   	this.classList.toggle("active");
   });
 
 //closing tag for $(document).ready  
 });
-

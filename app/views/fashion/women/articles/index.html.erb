@@ -1,36 +1,43 @@
-<%= render "nav_bar" %>
-
 <body id="top">
-
+<%= render "nav_bar" %>
 <section class="hero" id="hero">
-    <div class="container">
 
-        <div class="row" id="articles-page-content">
-            <div class="col-lg-12">
-                <h1 class="animated fadeInDown" align="center">Women's Fashion</h1>
-                <br /><br /><br />
-            </div>
-        </div>
+  <div id="masonry-parent" class="container">
+    <div class="row" id="articles-page-content">
+      <div class="col-lg-12">
+        <h1 class="animated fadeInDown" align="center">Women's Fashion</h1>
+        <br /><br /><br />
+        <%= render "search_form" %>
+        <br />
+      </div>
+     </div>
 
-        <div id="masonry-grid">
-            <% @article.each do |article| %>
-                <% if article.category == "wfashion" %>
-                    <!--<div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
-                    <div class="grid-item">
-                        <a class="thumbnail" href="<%= article.url %>" target="_blank">
-                            <img class="img-responsive" src="<%= article.image %>" alt="">
-                        </a>
-                        <h4 style="color:black"><%= article.title %></h4>
-                        <h4>Source: <%= article.source %></h4>
-                        <% if current_user %>
-                            <a><h4><%= link_to "Save", user_favourites_path(article, :category => article.category, :image => article.image, :title => article.title, :url => article.url, :source => article.source), method: :post %></h4></a>
-                        <% end %>
-                    </div>
-                <% end %>
-            <% end %>
-        </div>
-    <hr>
+    <div id="masonry-grid">
+      <% @article.each do |article| %>
+        <!--<div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
+          <div class="grid-item">
+              <a class="thumbnail" href="<%= article.url %>" target="blank">
+                <img class="img-responsive" src="<%= article.image %>" alt="">
+              </a>
+              <h4 style="color:black"><%= article.title %></h4>
+              <h4>Source: <%= article.source %></h4>
+              <% if current_user %>
+                <a>
+                <h4><%= link_to "Save", user_favourites_path(article, :category => article.category, :image => article.image, :title => article.title, :url => article.url, :source => article.source), method: :post %>
+                </h4>
+                </a>
+              <% end %>
+
+          </div>
+      <% end %>
     </div>
-</section>
 
+    <!-- <hr> -->
+
+  </div>
+</section>
+<!--infinite scrolling-->
+  <div id="infinite-scrolling" class="test">
+    <%= paginate @article %>
+  </div>
 </body>

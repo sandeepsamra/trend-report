@@ -142,6 +142,8 @@ function buildGrid () {
     $container.masonry('layout');
   });
 
+  attachSaveLinks();
+  
 }
 
 buildGrid();

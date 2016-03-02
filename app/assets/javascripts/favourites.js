@@ -1,9 +1,7 @@
-$(document).ready(function(){
-
+function attachSaveLinks() {
   $('.article a.save-article').on('click', function(e) {
     var link = $(e.target);
     e.preventDefault();
-
     $.ajax({
       url: link.attr('href'),
       method: 'POST',
@@ -21,5 +19,4 @@ $(document).ready(function(){
       }
     });
   });
-
-});
+}

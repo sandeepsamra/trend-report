@@ -142,6 +142,8 @@ function buildGrid () {
     $container.masonry('layout');
   });
 
+  attachSaveLinks();
+  
 }
 
 buildGrid();
@@ -170,6 +172,7 @@ function infiniteScrollFinished () {
                    // selector for all items you'll retrieve
 
   }, infiniteScrollFinished );
+
 /******************************************************************************************************************************
 Waypoints
 *******************************************************************************************************************************/

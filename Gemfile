@@ -52,6 +52,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #pagination
 gem 'kaminari'
 
+gem 'quiet_assets', group: :development
+
+gem 'social-share-button'
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

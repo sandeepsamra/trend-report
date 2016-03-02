@@ -21,4 +21,5 @@
 //= require masonry.pkgd.min.js
 //= require jquery.infinitescroll.js
 //= require imagesloaded.pkgd.min.js
+//= require social-share-button
 //= require_tree .

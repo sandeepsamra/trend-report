@@ -2,7 +2,7 @@ class Fashion::Women::ArticlesController < ApplicationController
 
   def index
     if params[:query]
-      @article = Article.search(params[:query]).where(category: "wfashion")
+      @article = Article.search(params[:query]).where(category: "wfashion").page(params[:page])
     else
       @article = Article.where(category: "wfashion").page(params[:page])
     end

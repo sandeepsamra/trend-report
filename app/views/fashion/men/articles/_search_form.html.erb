@@ -5,7 +5,7 @@
     <div class="input-group">
         <%= form_tag(user_fashion_men_articles_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :query, "", {placeholder: "Search Articles"} %>
-        <button class="btn btn-default" type="button">Go!</button>
+        <button class="btn btn-default" type="submit" value="Go!">
     </div>
   </div>
   <% end %>
@@ -20,7 +20,7 @@
     <div class="input-group">
         <%= form_tag(fashion_men_articles_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :query, "", {placeholder: "Search Articles"} %>
-        <button class="btn btn-default" type="button">Go!</button>
+        <input class="btn btn-default" type="submit" value="Go!">
     </div>
   </div>
   <% end %>

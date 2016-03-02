@@ -131,28 +131,46 @@ Log in & sign up forms
 /******************************************************************************************************************************
 Masonry Grid
 *******************************************************************************************************************************/
-  $(function(){
-    var $container = jQuery('#masonry-grid').masonry({
-      itemSelector: '.grid-item'
-    });
-    $container.imagesLoaded().progress( function() {
-      $container.masonry('layout');
-    });
+
+function buildGrid () {
+
+  var $container = $('#masonry-grid').masonry({
+    itemSelector: '.grid-item'
   });
+
+  $container.imagesLoaded().progress( function() {
+    $container.masonry('layout');
+  });
+
+}
+
+buildGrid();
+
 /******************************************************************************************************************************
 Masonry Infinite Scroll
 *******************************************************************************************************************************/
 // infinitescroll() is called on the element that surrounds 
 // the items you will be loading more of
-  $('div.container').infinitescroll({
+
+function infiniteScrollFinished () {
+  var masonry_clone = $('#masonry-grid').clone();
+  $('#masonry-grid').remove();
+  $('#masonry-parent').append(masonry_clone);
+  buildGrid();
+
+}
+  
+  $('#masonry-grid').infinitescroll({
  
     navSelector  : "nav.pagination",            
                    // selector for the paged navigation (it will be hidden)
     nextSelector : "nav.pagination a:first",
                    // selector for the NEXT link (to page 2)
-    itemSelector : "#masonry-grid div.grid-item"         
+    itemSelector : ".grid-item",         
                    // selector for all items you'll retrieve
-  });
+
+  }, infiniteScrollFinished );
+
 /******************************************************************************************************************************
 Waypoints
 *******************************************************************************************************************************/

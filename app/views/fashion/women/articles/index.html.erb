@@ -2,7 +2,7 @@
 <%= render "nav_bar" %>
 <section class="hero" id="hero">
 
-  <div class="container">
+  <div id="masonry-parent" class="container">
     <div class="row" id="articles-page-content">
       <div class="col-lg-12">
         <h1 class="animated fadeInDown" align="center">Women's Fashion</h1>
@@ -22,17 +22,21 @@
               <h4 style="color:black"><%= article.title %></h4>
               <h4>Source: <%= article.source %></h4>
               <% if current_user %>
-                <a><h4><%= link_to "Save", user_favourites_path(article, :category => article.category, :image => article.image, :title => article.title, :url => article.url, :source => article.source), method: :post %></h4></a>
+                <a>
+                <h4><%= link_to "Save", user_favourites_path(article, :category => article.category, :image => article.image, :title => article.title, :url => article.url, :source => article.source), method: :post %>
+                </h4>
+                </a>
               <% end %>
-            </div>
-        <% end %>
-      </div>
-
-    <hr>
+          </div>
+      <% end %>
     </div>
+
+    <!-- <hr> -->
+
+  </div>
 </section>
 <!--infinite scrolling-->
-  <div id="infinite-scrolling">
+  <div id="infinite-scrolling" class="test">
     <%= paginate @article %>
   </div>
 </body>

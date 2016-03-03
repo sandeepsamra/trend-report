@@ -19,7 +19,7 @@
     <div id="masonry-grid">
       <% @article.each do |article| %>
           <div class="grid-item article">
-              <a class="thumbnail" href="<%= article.url %>" target="blank">
+              <a class="thumbnail" href="<%= article.url %>" target="_blank">
                 <img class="img-responsive" src="<%= article.image %>" alt="">
               </a>
               <h4 style="color:black"><%= article.title %></h4>
@@ -32,8 +32,8 @@
                     category: article.category, 
                     image: article.image, 
                     title: article.title,
-                    :url => article.url,
-                    :source => article.source
+                    url: article.url,
+                    source: article.source
                   }, class: 'save-article' %>
                 </h4>
               <% elsif current_user && Favourite.find_by(title: article.title) %>

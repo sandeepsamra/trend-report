@@ -155,21 +155,23 @@ Masonry Infinite Scroll
 // the items you will be loading more of
 
 function infiniteScrollFinished () {
+
   var masonry_clone = $('#masonry-grid').clone();
   $('#masonry-grid').remove();
+  var newImages = $('#masonry-parent > .grid-item');
+  masonry_clone.append(newImages);
   $('#masonry-parent').append(masonry_clone);
   buildGrid();
-
 }
   
-  $('#masonry-grid').infinitescroll({
- 
-    navSelector  : "nav.pagination",            
-                   // selector for the paged navigation (it will be hidden)
-    nextSelector : "nav.pagination a:first",
-                   // selector for the NEXT link (to page 2)
-    itemSelector : ".grid-item",         
-                   // selector for all items you'll retrieve
+  $('#masonry-parent').infinitescroll({
+
+  navSelector  : "nav.pagination",            
+                 // selector for the paged navigation (it will be hidden)
+  nextSelector : "nav.pagination a:first",
+                 // selector for the NEXT link (to page 2)
+  itemSelector : ".grid-item",         
+                 // selector for all items you'll retrieve
 
   }, infiniteScrollFinished );
 

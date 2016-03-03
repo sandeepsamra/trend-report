@@ -1,0 +1,54 @@
+<body id="top">
+<%= render "nav_bar" %>
+<section class="hero" id="hero">
+
+  <div id="masonry-parent" class="container">
+    <div class="row" id="articles-page-content">
+      <div class="col-lg-12">
+        <h1 class="animated fadeInDown" align="center">Women's Fashion</h1>
+        <br /><br /><br />
+        <%= render "search_form" %>
+        <br /><br /><br />
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: "alert alert-danger" %>
+        <% end -%>
+      </div>
+     </div>
+      <hr>
+
+    <div id="masonry-grid">
+      <% @article.each do |article| %>
+          <div class="grid-item article">
+              <a class="thumbnail" href="<%= article.url %>" target="_blank">
+                <img class="img-responsive" src="<%= article.image %>" alt="">
+              </a>
+              <h4 style="color:black"><%= article.title %></h4>
+              <h4>Source: <%= article.source %></h4>
+              <%= social_share_button_tag(article.url, :popup => "true", desc: "Keep up with the hottest trends!", via: "TrendReport") %>
+              <% if current_user && !(Favourite.find_by(title: article.title)) %>
+                <a class="save-saved-links">
+                <h4>
+                  <%= link_to 'Save', user_favourites_path(article), data: {
+                    category: article.category, 
+                    image: article.image, 
+                    title: article.title,
+                    url: article.url,
+                    source: article.source
+                  }, class: 'save-article' %>
+                </h4>
+              <% elsif current_user && Favourite.find_by(title: article.title) %>
+                <h4>Saved!</h4>
+                </a>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--infinite scrolling-->
+  <div id="infinite-scrolling" class="test">
+    <%= paginate @article %>
+  </div>
+</body>

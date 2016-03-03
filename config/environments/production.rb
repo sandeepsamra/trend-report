@@ -45,6 +45,9 @@ TrendReport::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  #send the welcome mailer
+  config.action_mailer.delivery_method = :smtp
+  
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

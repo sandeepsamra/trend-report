@@ -11,6 +11,15 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
+//= require bootstrap.min
+//= require masonry.pkgd.min.js
+//= require jquery.infinitescroll.js
+//= require imagesloaded.pkgd.min.js
+//= require social-share-button
 //= require_tree .

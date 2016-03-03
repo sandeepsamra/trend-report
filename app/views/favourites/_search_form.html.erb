@@ -1,0 +1,13 @@
+<div>
+  <!-- view rendered will be the index view of our articles resource -->
+  <div class="col-md-3">
+    <div class="input-group">
+        <%= form_tag(user_favourites_path(current_user.id), :method => "get", id: "search-form") do %>
+        <%= text_field_tag :query, "", {placeholder: "Search Favourites"} %>
+        <input class="btn btn-default" type="submit" value="Go!">
+    </div>
+  </div>
+  <%= yield %>
+</div>
+
+<% end %>

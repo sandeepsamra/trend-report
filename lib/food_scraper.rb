@@ -23,7 +23,7 @@ class FoodScraper
     @food_network.css('ul.post-list li.post-item').each do |article|
       image = article.css('a.post-link div.post-imageContainer img.post-image').attr('data-src')
       title = article.css('div.post-info h3.post-infoTitle a.post-link').text
-      link = "www.foodnetwork.ca"
+      link = "http://www.foodnetwork.ca"
       url = "#{link}#{article.css('div.post-info h3.post-infoTitle a.post-link').attr('href')}"
       Article.create(
         url: url,

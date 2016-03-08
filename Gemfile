@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.1.3' #need it for heroku
 
+#need for heroku
+gem 'rails_12factor'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 

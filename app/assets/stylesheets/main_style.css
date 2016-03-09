@@ -102,7 +102,7 @@ audio,canvas,video {
 	*display:inline;
 	*zoom: 1;
 }
-* Remove excess height in iOS 5 devices. */
+/** Remove excess height in iOS 5 devices. */
 audio:not([controls]) {
 	display:none;
 	height:0;
@@ -124,9 +124,8 @@ html,button,input,select,textarea {
 	font-family:'Varela Round',sans-serif;
 }
 body {
-	margin:0;
+/*	margin: 0;*/
 	font-family: 'Open Sans',sans-serif;
-	height:;
 }
 /* ==========================================================================Links========================================================================== */
 a:focus {
@@ -262,9 +261,9 @@ legend {
 }
 button,input,select,textarea {
 	font-size:100%;
-	/margin:0;
+	margin:0;
 	vertical-align:baseline;
-	*vertical-align:middle;
+	vertical-align:middle;
 }
 button,input {
 	line-height:normal;
@@ -272,7 +271,7 @@ button,input {
 button,html input[type="button"],input[type="reset"],input[type="submit"] {
 	-webkit-appearance:button;
 	cursor:pointer;
-	*overflow:visible;
+	overflow:visible;
 }
 button[disabled],input[disabled] {
 	cursor:default;
@@ -507,7 +506,7 @@ table {
 }
 .menu {
 	height:100%;
-	overflow:;
+/*	overflow:;*/
 	font-size:0.75em;
 }
 .icon-list {

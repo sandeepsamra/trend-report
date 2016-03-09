@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.3'
 
 #need for heroku
 gem 'rails_12factor'

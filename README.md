@@ -5,4 +5,4 @@ This is a Lighthouse Labs final project built by Sandeep Samra and Natalie Famul
 
 Trend Report was built using Ruby, Ruby on Rails, PostgreSQL, HTML5, CSS3 and jQuery.
 
-Check out Trend Report [here](http://www.trend-report.herokuapp.com).
+Check out Trend Report [here](http://trend-report.herokuapp.com).

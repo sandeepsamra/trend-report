@@ -81,6 +81,7 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
+    puma (2.15.3)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.5.5)
@@ -165,6 +166,7 @@ DEPENDENCIES
   nokogiri
   pg
   pry-byebug
+  puma
   quiet_assets
   rails (= 4.0.0)
   rails_12factor
